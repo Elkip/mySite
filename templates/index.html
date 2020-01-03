@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mitchell Henschel's Homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='icons/Cloud-icon.ico') }}" rel="skull icon">
+</head>
+<body class="bg-dark text-white">
+    <div class="header">
+        <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+          <a class="navbar-brand" href="#">My Blog</a>
+          <div class="collapse navbar-collapse navbar-fixed-top" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#" tabindex="0">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('about') }}" tabindex="1" aria-disabled="false">About Me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" tabindex="2" aria-disabled="false">Blog</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+    <br />
+    <img src="static/images/corn_field.jpg" class="card-img-top" alt="I LOVE CORN">
+    <br />
+    <main role="main" class="container">
+        <div class="bg-dark text-white">
+            <h1 align="center">Hello, welcome to my homepage</h1>
+            <p class="lead" align="center">I am a simple data scientist who enjoys corn and music.</p>
+            <p align="center">Click on any of the links in the navigation bar to learn more about me</p>
+        </div>
+    </main>
+    <script src="static/js/bootstrap.min.js"></script>
+</body>
+</html>
