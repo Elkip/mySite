@@ -5,24 +5,11 @@
     <title>About Me</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='icons/Cloud-icon.ico') }}" rel="skull icon">
+    <link href="{{ url_for('static', filename='icons/Cloud-icon.ico') }}" rel="cloud icon">
     <STYLE type="text/css">
 
         body {margin-top: 0px;margin-left: 0px;}
-
-        #page_1 {position:relative; overflow: hidden;margin: 37px 0px 82px 79px;padding: 0px;border: none;width: 737px;}
-
-        #page_1 #p1dimg1 {position:absolute;top:192px;left:21px;z-index:-1;width:618px;height:691px;}
-        #page_1 #p1dimg1 #p1img1 {width:618px;height:691px;}
-
-
-
-
-        #page_2 {position:relative; overflow: hidden;margin: 33px 0px 971px 0px;padding: 0px;border: none;width: 816px;}
-
-
-
-
+        hr {color: white; background-color:gray;}
 
         .ft0{font: bold 16px 'Arial';line-height: 19px;}
         .ft1{font: 12px 'Arial';line-height: 18px;}
@@ -99,17 +86,17 @@
 <body class="bg-dark text-white">
     <div class="header">
         <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
-          <a class="navbar-brand" href="#">My Blog</a>
+          <a class="navbar-brand" href="{{ url_for('home') }}">My Blog</a>
           <div class="collapse navbar-collapse navbar-fixed-top" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#" tabindex="0">Portfolio</a>
+                <a class="nav-link" href="{{ url_for('portfolio') }}" tabindex="0">Portfolio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('about') }}" tabindex="1" aria-disabled="false">About Me</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" tabindex="2" aria-disabled="false">Blog</a>
+                <a class="nav-link" href="{{ url_for('blog') }}" tabindex="2" aria-disabled="false">Blog</a>
               </li>
             </ul>
           </div>
@@ -130,32 +117,27 @@
                 data, and assisting employees in setting up dashboards and KPIs. Additionally, I have ample experience
                 in customer service and collaboration with my coworkers. </p>
             <p>If you’re looking for a creative problem solver with a motivation to continue learning then look no
-                further. I’ve attached my resume, references, and a letter of recommendation from my team leader at BCBS.
-                Please contact me with any questions via phone or email. Thank you in advance for your time and I hope
-                to hear from you soon.</p>
+                further. Please contact me with any questions via phone or email. Thank you in advance for your time and
+                I hope to hear from you soon.</p>
         </div>
         <br />
         <hr>
         <br />
         <script src="static/js/util.js"></script>
         <div class="container" align="center" id="resume" style="display:none;">
-            <P class="p0 ft0">Mitchell Henschel</P>
-            <P class="p1 ft1">13162 Linda Vista St Belleville, MI 48111 mitchellhenschel@gmail.com <NOBR>(734)-431-8187</NOBR></P>
-            <P class="p2 ft2"><NOBR><A href="https://www.linkedin.com/in/mitchell-henschel-2980a911b/">https://www.linkedin.com/in/mitchell-henschel-2980a911b/</A></NOBR></P>
-            <P class="p3 ft2"><A href="https://github.com/Elkip">https://github.com/Elkip</A></P>
             <P class="p4 ft3">Skills</P>
             <TABLE cellpadding=0 cellspacing=0 class="t0">
             <TR>
                 <TD class="tr0 td0"><P class="p5 ft4">&nbsp;</P></TD>
                 <TD class="tr0 td1"><P class="p5 ft5">Data Manipulation</P></TD>
-                <TD colspan=2 class="tr0 td2"><P class="p5 ft5">Front & Back End</P></TD>
+                <TD colspan=2 class="tr0 td2"><P class="p5 ft5">Front & Back End Development</P></TD>
                 <TD colspan=2 class="tr0 td3"><P class="p6 ft5">Business Skills</P></TD>
                 <TD colspan=2 class="tr0 td4"><P class="p6 ft5">Software</P></TD>
             </TR>
             <TR>
                 <TD class="tr1 td0"><P class="p5 ft4">&nbsp;</P></TD>
                 <TD class="tr1 td1"><P class="p5 ft4">&nbsp;</P></TD>
-                <TD colspan=2 class="tr1 td2"><P class="p5 ft5">Development</P></TD>
+                <TD colspan=2 class="tr1 td2"><P class="p5 ft5"> </P></TD>
                 <TD class="tr1 td5"><P class="p5 ft4">&nbsp;</P></TD>
                 <TD class="tr1 td6"><P class="p5 ft4">&nbsp;</P></TD>
                 <TD class="tr1 td5"><P class="p5 ft4">&nbsp;</P></TD>
@@ -192,7 +174,7 @@
                 <TD class="tr3 td7"><P class="p5 ft6">MS SQL Server</P></TD>
             </TR>
             <TR>
-                <TD colspan=2 class="tr3 td10"><P class="p5 ft6">● R and Python Data</P></TD>
+                <TD colspan=2 class="tr3 td10"><P class="p5 ft6">●&nbsp&nbsp&nbsp&nbsp R and Python</P></TD>
                 <TD class="tr3 td8"><P class="p8 ft6">●</P></TD>
                 <TD class="tr3 td9"><P class="p5 ft6">Javascript</P></TD>
                 <TD class="tr3 td5"><P class="p5 ft4">&nbsp;</P></TD>
@@ -202,7 +184,7 @@
             </TR>
             <TR>
                 <TD class="tr3 td0"><P class="p5 ft4">&nbsp;</P></TD>
-                <TD class="tr3 td1"><P class="p7 ft6">Modeling</P></TD>
+                <TD class="tr3 td1"><P class="p7 ft6">Data Modeling</P></TD>
                 <TD class="tr3 td8"><P class="p8 ft6">●</P></TD>
                 <TD class="tr3 td9"><P class="p5 ft6">HTML/CSS</P></TD>
                 <TD class="tr3 td5"><P class="p5 ft6">●</P></TD>
@@ -221,7 +203,9 @@
                 <TD class="tr1 td7"><P class="p5 ft6">Amazon AWS</P></TD>
             </TR>
             </TABLE>
+            <BR />
             <P class="p9 ft3">Experience</P>
+            <BR />
             <TABLE cellpadding=0 cellspacing=0 class="t1">
             <TR>
                 <TD class="tr4 td11"><P class="p5 ft8">IT Netsuite Intern - <SPAN class="ft7">​National Food Group</SPAN></P></TD>
@@ -233,6 +217,8 @@
             <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Assisted employees in creation of KPI’s, saved searches, and dashboard design</SPAN></P>
             <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Practiced data modeling for productivity improvement and marketing applications</SPAN></P>
             <P class="p12 ft13"><SPAN class="ft7">●</SPAN><SPAN class="ft12">Worked with other departments on new NetSuite implementations and changes to existing systems</SPAN></P>
+            <BR />
+
             <TABLE cellpadding=0 cellspacing=0 class="t2">
             <TR>
                 <TD class="tr1 td11"><P class="p5 ft7"><SPAN class="ft8">Operations Intern - </SPAN>​Blue Cross Blue Shield</P></TD>
@@ -244,6 +230,8 @@
             <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Created and administered a SharePoint employee feedback page</SPAN></P>
             <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Created a UI in MS Access to organize inventory reporting queries</SPAN></P>
             <P class="p14 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Created a mail categorizing application in Excel using VBA and VLOOKUP</SPAN></P>
+            <BR />
+
             <TABLE cellpadding=0 cellspacing=0 class="t2">
             <TR>
                 <TD class="tr5 td11"><P class="p5 ft7"><SPAN class="ft8">Busser/Host </SPAN>​- Northside Grill</P></TD>
@@ -252,18 +240,24 @@
             </TABLE>
             <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Set up and cleaned table and seated customers</SPAN></P>
             <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Communicated with staff to handle all customer needs</SPAN></P>
-            <P class="p15 ft13"><SPAN class="ft7">●</SPAN><SPAN class="ft12">Counted and balanced register at the end of the day </SPAN><SPAN class="ft17">Sales intern </SPAN>​- Kaiser Optical Systems, Inc.J​<SPAN class="ft18">un 2016 - Sep 2016</SPAN></P>
+            <P class="p15 ft13"><SPAN class="ft7">●</SPAN><SPAN class="ft12">Counted and balanced register at the end of the day </SPAN></P>
+            <BR />
+            <TABLE>
+                <TD class="tr1 td11"><P class="p5 ft7"><SPAN class="ft8">&nbsp&nbspSales intern </SPAN>​- Kaiser Optical Systems, Inc.</P></TD>
+                <TD class="tr1 td13"><P class="p5 ft14"><SPAN class="ft7"></SPAN>&nbsp&nbsp Jun 2016 - Sep 2016</P></TD>
+            </TABLE>
+
             <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Ran quantitative analyses and diagnosed problems on RAMAN spectrographs</SPAN></P>
             <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Updated online database of inventory using SalesForce, Agile, and Filemaker Pro</SPAN></P>
             <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Installed software and diagnosed issues with systems heading to demo</SPAN></P>
+            <BR />
             <P class="p16 ft3">Education</P>
             <P class="p17 ft14">Bachelor of Science (December 2019)</P>
             <P class="p18 ft7">Eastern Michigan University, Ypsilanti</P>
             <P class="p19 ft7">Major: Data Science and Analysis with Concentration on Theory</P>
-
-            <P class="p20 ft19">2</P>
             <P class="p21 ft7">3.72 GPA</P>
         </div>
+        <br />
         <p align="center"><button onclick="hideElement('resume')">Show Resume</button></p>
     </div>
 </body>
