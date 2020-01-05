@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Mitchell Henschel's Homepage</title>
+        <title>My Projects</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ url_for('static', filename='icons/Cloud-icon.ico') }}" rel="cloud icon">
@@ -27,13 +27,24 @@
             </nav>
         </div>
         <br /><br /><br />
-        <img src="static/images/corn_field.jpg" class="card-img" alt="I LOVE CORN">
-        <br />
-        <main role="main" class="container">
-            <div class="bg-dark text-white">
-                <h1 align="center">Hello, welcome to my homepage</h1>
-                <p class="lead" align="center">I am a simple data scientist who enjoys corn and music.</p>
-                <p align="center">Click on any of the links in the navigation bar to learn more about me</p>
+        <main role="main">
+            <div class="card-deck">
+                <div class="card text-center" style="width: 5rem">
+                        <img class="card-img-top" src="static/images/LI-In-Bug.png" alt="Sample" />
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title">WEMU Music Catalog</h5>
+                            <p class="card-text">Jazz, News & NPR</p>
+                            <a href="#" class="btn btn-primary">This would be a link</a>
+                        </div>
+                </div>
+                <div class="card text-center" style="width: 5rem">
+                        <img class="card-img-top" src="static/images/LI-In-Bug.png" alt="Sample" />
+                        <div class="card-body bg-dark">
+                            <h5 class="card-title">WEMU Music Catalog</h5>
+                            <p class="card-text">Jazz, News & NPR</p>
+                            <a href="#" class="btn btn-primary">This would be a link</a>
+                        </div>
+                </div>
             </div>
         </main>
         <script src="static/js/bootstrap.min.js"></script>
