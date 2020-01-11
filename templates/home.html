@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Mitchell Henschel's Homepage</title>
-  <link rel="stylesheet" href="static/css/dots.css">
+
   <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
 
   <link rel="stylesheet" href="{{ url_for('static', filename='css/open-iconic-bootstrap.min.css') }}">
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}">
 
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dots.css') }}">
   <link href="{{ url_for('static', filename='icons/Cloud-icon.ico') }}" rel="cloud icon">
 </head>
 
@@ -42,34 +42,34 @@
   <!-- partial:index.partial.html -->
   <div class="container">
 
-      <section class="home-slider owl-carousel js-fullheight">
-        <div class="slider-item js-fullheight">
-          <div class="container">
-            <div class="row slider-text align-items-center text-center justify-content-center" data-scrollax-parent="true">
-              <div class="col-md-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                  <p><a href="#" class="scroll">Hello! I'm</a></p>
-                <h1 class="mb-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Mitchell Henschel</h1>
-              </div>
+    <section class="home-slider owl-carousel js-fullheight">
+      <div class="slider-item js-fullheight">
+        <div class="container">
+          <div class="row slider-text align-items-center text-center justify-content-center" data-scrollax-parent="true">
+            <div class="col-md-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+              <p><a href="#" class="scroll">Hello! I'm</a></p>
+              <h1 class="mb-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Mitchell Henschel</h1>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="slider-item js-fullheight">
-          <div class="overlay"></div>
-          <div class="container">
-            <div class="row slider-text align-items-center text-center justify-content-center" data-scrollax-parent="true">
-              <div class="col-md-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                <p><a href="#" class="scroll">Michigan Born and Raised</a></p>
-                <h1 class="mb-3" data-scrollax="properties: {translateY: '30%', opacity: 1.6}">Data Scientist</h1>
-              </div>
+      <div class="slider-item js-fullheight">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center text-center justify-content-center" data-scrollax-parent="true">
+            <div class="col-md-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+              <p><a href="#" class="scroll">Michigan Born and Raised</a></p>
+              <h1 class="mb-3" data-scrollax="properties: {translateY: '30%', opacity: 1.6}">Data Scientist</h1>
             </div>
           </div>
         </div>
-      </section>
-      <!-- Create Background Pattern -->
-      <canvas id="animation-pattern"></canvas>
-      <!-- Create Background Dots -->
-      <canvas id="animation-dots"></canvas>
+      </div>
+    </section>
+    <!-- Create Background Pattern -->
+    <canvas id="animation-pattern"></canvas>
+    <!-- Create Background Dots -->
+    <canvas id="animation-dots"></canvas>
   </div>
   <!-- partial -->
   <script src="static/js/animate-dots.js"></script>
@@ -85,14 +85,14 @@
   <script src="static/js/scrollax.min.js"></script>
   <script src="static/js/main.js"></script>
 </body>
-    <footer class="footer font-small text-center" style="position: fixed; width: 100%; background-color: black; text-align: center; padding-top: 10px; padding-bottom: 20px; bottom: 0;">
-        <div class="container">
-            <ul class="list-unstyled list-inline text-center" style="display: inline;">
-                <li class="list-inline-item">
-                    Homepage inspired by<a href="https://codepen.io/dreammmr/pen/ejrjBv"> Codepen Electric Tails</a>
-                </li>
-            </ul>
-        </div>
-    </footer>
+<footer class="footer font-small text-center" style="position: fixed; width: 100%; background-color: black; text-align: center; padding-top: 10px; padding-bottom: 20px; bottom: 0;">
+  <div class="container">
+    <ul class="list-unstyled list-inline text-center" style="display: inline;">
+      <li class="list-inline-item">
+        Homepage inspired by<a href="https://codepen.io/dreammmr/pen/ejrjBv"> Codepen Electric Tails</a>
+      </li>
+    </ul>
+  </div>
+</footer>
 
 </html>

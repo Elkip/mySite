@@ -11,7 +11,3 @@ function hideElement(e_id) {
     }
 }
 
-
-function modalPopup(b, modal) {
-    var mo;
-}
