@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
 
 
 @app.route('/about')
@@ -20,7 +20,7 @@ def portfolio():
 
 @app.route('/blog')
 def blog():
-    return render_template(blog.html)
+    return render_template('blog.html')
 
 
 if __name__ == '__main__':

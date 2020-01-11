@@ -10,3 +10,8 @@ function hideElement(e_id) {
         btn.innerText="Show Resume";
     }
 }
+
+
+function modalPopup(b, modal) {
+    var mo;
+}
