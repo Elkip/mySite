@@ -1,6 +1,6 @@
 function hideElement(e_id) {
     var x = document.getElementById(e_id);
-    var btn = document.getElementById('btn');
+    var btn = document.getElementById(this.id);
     if(x.style.display == "none") {
         x.style.display = "block";
         btn.innerText="Hide Resume";
@@ -10,4 +10,3 @@ function hideElement(e_id) {
         btn.innerText="Show Resume";
     }
 }
-
