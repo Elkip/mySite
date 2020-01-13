@@ -36,12 +36,12 @@
 </div>
 <br/><br/><br/>
 <!--Cards-->
-<div class="card-deck bg-primary">
+<div class="card-deck bg-secondary">
     <!--Row1-->
     <div class="row mx-auto" style="margin-top:5px;margin-bottom: 5px;">
         <!--MySite-->
         <div class="card align-items-center bg-dark" style="width: 50rem">
-            <img class="card-img-top" src="static/images/LI-In-Bug.png" alt="Sample" style="width:5rem;height:5rem;">
+            <img class="card-img-top" src="static/images/cloud.png" alt="Sample" style="width:7rem;height:5rem;">
             <div class="card-body col text-center">
                 <h5 class="card-title">This Website</h5>
                 <p class="card-text text-center">A personal project to hold my portfolio</p>
@@ -55,7 +55,7 @@
             <img class="card-img-top" src="static/images/WEMU-Logo.png" alt="Sample" style="width:5rem;height:5rem;">
             <div class="card-body col text-center">
                 <h5 class="card-title">WEMU Music Catalog</h5>
-                <p class="card-text text-center">Dajngo & MySQL</p>
+                <p class="card-text text-center">Django CRUD web app with MySQL</p>
                 <button id="btn_2" class="btn btn-info btn-primary"
                         onclick="getElementById('modal_2').style.display = 'block';">Details
                 </button>
@@ -64,22 +64,26 @@
     </div>
     <!--Row2-->
     <div class="row mx-auto" style="margin-top:5px;margin-bottom: 5px;">
-        <!--Project3-->
+        <!--Client Server-->
         <div class="card align-items-center bg-dark" style="width: 50rem">
-            <img class="card-img-top" src="static/images/LI-In-Bug.png" alt="Sample" style="width:5rem;height:5rem;">
+            <img class="card-img-top" src="static/images/network.png" alt="Sample" style="width:7rem;height:5rem;">
             <div class="card-body col text-center">
-                <h5 class="card-title">WEMU Music Catalog</h5>
-                <p class="card-text text-center">Jazz, News & NPR</p>
-                <a href="#" class="btn btn-primary align-content-center">This would be a link</a>
+                <h5 class="card-title">Stock Trading Client-Server Program</h5>
+                <p class="card-text text-center">Socket programming in C</p>
+                <button id="btn_3" class="btn btn-info btn-primary"
+                        onclick="getElementById('modal_3').style.display = 'block';">Details
+                </button>
             </div>
         </div>
         <!--Project3-->
         <div class="card align-items-center bg-dark" style="width: 50rem">
-            <img class="card-img-top " src="static/images/WEMU-Logo.png" alt="Sample" style="width:5rem;height:5rem;">
+            <img class="card-img-top " src="static/images/dos.png " alt="Sample" style="width:5rem;height:5rem;">
             <div class="card-body col text-center">
-                <h5 class="card-title">WEMU Music Catalog</h5>
-                <p class="card-text text-center">Dajngo & MySQL</p>
-                <a href="#" class="btn btn-primary">Project Details</a>
+                <h5 class="card-title">DOS-Like Operating System</h5>
+                <p class="card-text text-center">A basic OS build with Assembly</p>
+                <button id="btn_4" class="btn btn-info btn-primary"
+                        onclick="getElementById('modal_4').style.display = 'block';">Details
+                </button>
             </div>
         </div>
     </div>
@@ -95,13 +99,13 @@
         <div class="modal-body">
             <p>Languages: Python Flask, HTML, CSS, Javascript</p>
             <p>Description: A side project to use as my personal portfolio! It took a few weekends to build, and
-                is hosted in Amazon AWS. In the works: A blog page that will use MongoDB to hold posts. Disclaimer:
+                is hosted in Amazon AWS. <br />In the works: A blog page that will use MongoDB to hold posts. <br />Disclaimer:
                 I am not a front end developer.</p>
             <p align="center"><a href="https://github.com/Elkip/mySite">View Repository</a></p>
         </div>
     </div>
 </div>
-<!-- Modal 1 -->
+<!-- Modal 2 -->
 <div id="modal_2" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
@@ -120,14 +124,47 @@
         </div>
     </div>
 </div>
-
+<!-- Modal 3 -->
+<div id="modal_3" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Client-Server Stock Trading Program</h4>
+            <span class="close" onclick="getElementById('modal_3').style.display='none';">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p>Languages: C, Makefile</p>
+            <p>Description: A project I created for a Networking class I took. Select a stock and quantity and send the
+            order through RSA encrypted UDP and TCP connections. See the readme on how to start the server and key manager.</p>
+            <p align="center"><a href="https://github.com/Elkip/Networking_Prinipals">View Repository</a></p>
+        </div>
+    </div>
+</div>
+<!-- Modal 3 -->
+<div id="modal_4" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">DOS-Like Operating System</h4>
+            <span class="close" onclick="getElementById('modal_4').style.display='none';">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p>Languages: NASM Assembly</p>
+            <p>Description: Created for a class on the conceptual workings of operating systems. Tells time, takes input,
+            and runs a virus to make the graphics glitch out upon entering a specific key pattern.</p>
+            <p align="center"><a href="https://github.com/Elkip/OS_assembly">View Repository</a></p>
+        </div>
+    </div>
+</div>
 <script>
     // Get the modal
     var modal1 = document.getElementById("modal_1");
     var modal2 = document.getElementById("modal_2");
+    var modal3 = document.getElementById("modal_3");
+    var modal4 = document.getElementById("modal_4");
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
-        if (event.target == modal1 || event.target == modal2) {
+        if (event.target == modal1 || event.target == modal2 || event.target == modal3 || event.target == modal4) {
             (event.target).style.display = "none";
         }
     }
