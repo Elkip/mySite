@@ -1,217 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>About Me</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-        <link href="{{ url_for('static', filename='icons/Cloud-icon.ico') }}" rel="cloud icon">
-        <link href="{{ url_for('static', filename='css/resume.css') }}" rel="stylesheet">
-    </head>
-    <body class="bg-dark text-white">
-        <div class="header">
-            <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
-              <a class="navbar-brand" href="{{ url_for('home') }}">Homepage</a>
-              <div class="collapse navbar-collapse navbar-fixed-top" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="{{ url_for('static', filename='icons/Cloud-icon.ico') }}" rel="cloud icon">
+    <link href="{{ url_for('static', filename='css/resume.css') }}" rel="stylesheet">
+</head>
+<body class="bg-dark text-white">
+<div class="header">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+        <a class="navbar-brand" href="{{ url_for('home') }}">Homepage</a>
+        <div class="collapse navbar-collapse navbar-fixed-top" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('about') }}" tabindex="1" aria-disabled="false">About Me</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('portfolio') }}" tabindex="0">Portfolio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('blog') }}" tabindex="2" aria-disabled="false">Blog</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-        </div>
-        <br /><br /><br />
-        <div class="title text-center" style="padding-left: 50px;">
-            <img src="/static/images/me_circle.png" alt="Me" style="width: 25rem;">
-            <b><h2>Hello, My name is Mitchell Henschel</h2></b>
-        </div>
-        <br />
-        <script src="static/js/bootstrap.min.js"></script>
-        <div class="main">
-            <div class="container" id="intro">
-                <p>I'm 23 and I've lived most of my life in Washtenaw County, MI. In December 2019 I received my Bachelor's
-                in Data Science (with a concentration on statistical theory) from Eastern Michigan University.</p>
-                <h4>What is Data Science?</h4>
-                <p>To put it simply, data science is the study of data and the methods of recording, storing, and
-                    analyzing data to extract useful information. A data scientist has more programming knowledge than
-                    that of a statistician and more statistical knowledge than that of a programmer, while also using
-                    business skills to apply findings to the industry.</p>
-                <h4>What kind of analytical tools are you familiar with?</h4>
-                <p>There are many different tools that can be used to achieve the same purpose. I'm familiar with
-                data science modeling tools in Python, R and SAS, with my personal favorite being Python due to it's
-                ease of use and powerful libraries for machine learning and natural language processing.</p>
-                <h4>What other programming languages are you proficient in?</h4>
-                <p>A lot. For a full list of languages see my resume below, but I've reached the point where learning
-                a new Object-Oriented or Scripting language only comes down to learning the syntax.</p>
-                <h4>Will you build me a new website?</h4>
-                <p>No. While I'm able to do front end design and development my strengths are in backend development
-                    and database administration.</p>
-                <h4>Can you build me graphs and models for my website derived from a relational database?</h4>
-                <p>Yes, now you're getting the idea.</p>
-            </div>
-            <br />
-            <hr>
-            <br />
-            <script src="static/js/util.js"></script>
-            <p align="center"><button id="btn" class="btn-dark btn-outline-light" onclick="hideElement('resume')">Show Resume</button></p>
-            <div class="container" align="center" id="resume" style="display:none;">
-                <P class="p4 ft3">Skills</P>
-                <TABLE cellpadding=0 cellspacing=0 class="t0">
-                <TR>
-                    <TD class="tr0 td0"><P class="p5 ft4">&nbsp;</P></TD>
-                    <TD class="tr0 td1"><P class="p5 ft5">Data Manipulation</P></TD>
-                    <TD colspan=2 class="tr0 td2"><P class="p5 ft5">Front & Back End Development</P></TD>
-                    <TD colspan=2 class="tr0 td3"><P class="p6 ft5">Business Skills</P></TD>
-                    <TD colspan=2 class="tr0 td4"><P class="p6 ft5">Software</P></TD>
-                </TR>
-                <TR>
-                    <TD class="tr1 td0"><P class="p5 ft4">&nbsp;</P></TD>
-                    <TD class="tr1 td1"><P class="p5 ft4">&nbsp;</P></TD>
-                    <TD colspan=2 class="tr1 td2"><P class="p5 ft5"> </P></TD>
-                    <TD class="tr1 td5"><P class="p5 ft4">&nbsp;</P></TD>
-                    <TD class="tr1 td6"><P class="p5 ft4">&nbsp;</P></TD>
-                    <TD class="tr1 td5"><P class="p5 ft4">&nbsp;</P></TD>
-                    <TD class="tr1 td7"><P class="p5 ft4">&nbsp;</P></TD>
-                </TR>
-                <TR>
-                    <TD class="tr2 td0"><P class="p5 ft6">●</P></TD>
-                    <TD class="tr2 td1"><P class="p7 ft6">Data Mining</P></TD>
-                    <TD class="tr2 td8"><P class="p8 ft6">●</P></TD>
-                    <TD class="tr2 td9"><P class="p5 ft6">Python</P></TD>
-                    <TD class="tr2 td5"><P class="p5 ft6">●</P></TD>
-                    <TD class="tr2 td6"><P class="p5 ft6">Communication</P></TD>
-                    <TD class="tr2 td5"><P class="p5 ft6">●</P></TD>
-                    <TD class="tr2 td7"><P class="p5 ft6">MS Office</P></TD>
-                </TR>
-                <TR>
-                    <TD class="tr3 td0"><P class="p5 ft6">●</P></TD>
-                    <TD class="tr3 td1"><P class="p7 ft6">SQL & NoSQL</P></TD>
-                    <TD class="tr3 td8"><P class="p8 ft6">●</P></TD>
-                    <TD class="tr3 td9"><P class="p5 ft6">Java</P></TD>
-                    <TD class="tr3 td5"><P class="p5 ft6">●</P></TD>
-                    <TD class="tr3 td6"><P class="p5 ft6">Teamwork</P></TD>
-                    <TD class="tr3 td5"><P class="p5 ft6">●</P></TD>
-                    <TD class="tr3 td7"><P class="p5 ft6">MS Access</P></TD>
-                </TR>
-                <TR>
-                    <TD class="tr3 td0"><P class="p5 ft6">●</P></TD>
-                    <TD class="tr3 td1"><P class="p7 ft6">Hadoop</P></TD>
-                    <TD class="tr3 td8"><P class="p8 ft6">●</P></TD>
-                    <TD class="tr3 td9"><P class="p5 ft6">Bash</P></TD>
-                    <TD class="tr3 td5"><P class="p5 ft6">●</P></TD>
-                    <TD class="tr3 td6"><P class="p5 ft6">Data</P></TD>
-                    <TD class="tr3 td5"><P class="p5 ft6">●</P></TD>
-                    <TD class="tr3 td7"><P class="p5 ft6">MS SQL Server</P></TD>
-                </TR>
-                <TR>
-                    <TD colspan=2 class="tr3 td10"><P class="p5 ft6">●&nbsp&nbsp&nbsp R and Python</P></TD>
-                    <TD class="tr3 td8"><P class="p8 ft6">●</P></TD>
-                    <TD class="tr3 td9"><P class="p5 ft6">Javascript</P></TD>
-                    <TD class="tr3 td5"><P class="p5 ft4">&nbsp;</P></TD>
-                    <TD class="tr3 td6"><P class="p5 ft6">Visualization</P></TD>
-                    <TD class="tr3 td5"><P class="p5 ft6">●</P></TD>
-                    <TD class="tr3 td7"><P class="p5 ft6">Windows, OSX &</P></TD>
-                </TR>
-                <TR>
-                    <TD class="tr3 td0"><P class="p5 ft4">&nbsp;</P></TD>
-                    <TD class="tr3 td1"><P class="p7 ft6">Data Modeling</P></TD>
-                    <TD class="tr3 td8"><P class="p8 ft6">●</P></TD>
-                    <TD class="tr3 td9"><P class="p5 ft6">HTML/CSS</P></TD>
-                    <TD class="tr3 td5"><P class="p5 ft6">●</P></TD>
-                    <TD class="tr3 td6"><P class="p5 ft6">Public Speaking</P></TD>
-                    <TD class="tr3 td5"><P class="p5 ft4">&nbsp;</P></TD>
-                    <TD class="tr3 td7"><P class="p5 ft6">Linux</P></TD>
-                </TR>
-                <TR>
-                    <TD class="tr1 td0"><P class="p5 ft6">●</P></TD>
-                    <TD class="tr1 td1"><P class="p7 ft6">Bayesian Analysis</P></TD>
-                    <TD class="tr1 td8"><P class="p8 ft6">●</P></TD>
-                    <TD class="tr1 td9"><P class="p5 ft6">MS Sharepoint</P></TD>
-                    <TD class="tr1 td5"><P class="p5 ft6">●</P></TD>
-                    <TD class="tr1 td6"><P class="p5 ft6">Organization</P></TD>
-                    <TD class="tr1 td5"><P class="p5 ft6">●</P></TD>
-                    <TD class="tr1 td7"><P class="p5 ft6">Amazon AWS</P></TD>
-                </TR>
-                </TABLE>
-                <BR />
-                <P class="p9 ft3">Experience</P>
-                <BR />
-                <TABLE cellpadding=0 cellspacing=0 class="t1">
-                <TR>
-                    <TD class="tr4 td11"><P class="p5 ft8">IT Netsuite Intern - <SPAN class="ft7">​National Food Group</SPAN></P></TD>
-                    <TD class="tr4 td12"><P class="p5 ft7">Oct 2019 - Present</P></TD>
-                </TR>
-                </TABLE>
-                <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Assisted in administering Netsuite user accounts and permissions</SPAN></P>
-                <P class="p11 ft11"><SPAN class="ft7">●</SPAN><SPAN class="ft10">Tested and developed workflows and JS scripts based on saved search conditions to handle automation of reporting and creation and population of custom fields</SPAN></P>
-                <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Assisted employees in creation of KPI’s, saved searches, and dashboard design</SPAN></P>
-                <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Practiced data modeling for productivity improvement and marketing applications</SPAN></P>
-                <P class="p12 ft13"><SPAN class="ft7">●</SPAN><SPAN class="ft12">Worked with other departments on new NetSuite implementations and changes to existing systems</SPAN></P>
-                <BR />
-
-                <TABLE cellpadding=0 cellspacing=0 class="t2">
-                <TR>
-                    <TD class="tr1 td11"><P class="p5 ft7"><SPAN class="ft8">Operations Intern - </SPAN>​Blue Cross Blue Shield</P></TD>
-                    <TD class="tr1 td13"><P class="p5 ft14"><SPAN class="ft7">​</SPAN>May 2019 - Aug 2019</P></TD>
-                </TR>
-                </TABLE>
-                <P class="p13 ft16"><SPAN class="ft7">●</SPAN><SPAN class="ft15">Worked with Analyst team in the Individual Membership and Billing Department to create reports through MS Access</SPAN></P>
-                <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Assigned system permissions to current and new employees</SPAN></P>
-                <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Created and administered a SharePoint employee feedback page</SPAN></P>
-                <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Created a UI in MS Access to organize inventory reporting queries</SPAN></P>
-                <P class="p14 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Created a mail categorizing application in Excel using VBA and VLOOKUP</SPAN></P>
-                <BR />
-
-                <TABLE cellpadding=0 cellspacing=0 class="t2">
-                <TR>
-                    <TD class="tr5 td11"><P class="p5 ft7"><SPAN class="ft8">Busser/Host </SPAN>​- Northside Grill</P></TD>
-                    <TD class="tr5 td13"><P class="p5 ft14"><SPAN class="ft7">​</SPAN>Aug 2017 - May 2019</P></TD>
-                </TR>
-                </TABLE>
-                <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Set up and cleaned table and seated customers</SPAN></P>
-                <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Communicated with staff to handle all customer needs</SPAN></P>
-                <P class="p15 ft13"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Balanced the register at the end of the day</SPAN></P>
-                <BR />
-                <TABLE>
-                    <TD class="tr1 td11"><P class="p5 ft7"><SPAN class="ft8">&nbsp&nbspSales intern </SPAN>​- Kaiser Optical Systems, Inc.</P></TD>
-                    <TD class="tr1 td13"><P class="p5 ft14"><SPAN class="ft7"></SPAN>&nbsp&nbsp Jun 2016 - Sep 2016</P></TD>
-                </TABLE>
-
-                <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Ran quantitative analyses and diagnosed problems on RAMAN spectrographs</SPAN></P>
-                <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Updated online database of inventory using SalesForce, Agile, and Filemaker Pro</SPAN></P>
-                <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Installed software and diagnosed issues with systems heading to demo</SPAN></P>
-                <BR />
-                <P class="p16 ft3">Education</P>
-                <P class="p17 ft14">Bachelor of Science (December 2019)</P>
-                <P class="p18 ft7">Eastern Michigan University, Ypsilanti</P>
-                <P class="p19 ft7">Major: Data Science and Analysis with Concentration on Theory</P>
-                <P class="p20 ft7">3.72 GPA</P>
-            </div>
-            <br /><br /><br /><br />
-        </div>
-    </body>
-    <footer class="footer font-small text-center" style="position: fixed; width: 100%; background-color: black; text-align: center; padding-top: 10px; padding-bottom: 20px; bottom: 0;">
-        <div class="container">
-            <ul class="list-unstyled list-inline text-center" style="display: inline;">
-                <li class="list-inline-item">
-                    <a href="https://www.linkedin.com/in/mitchell-henschel-2980a911b/">
-                        <img src="static/images/LI-Logo.png" alt="LinkedIn" />
-                    </a>
                 </li>
-                <li class="list-inline-item">
-                    <a href="https://github.com/Elkip">
-                        <img src="static/images/Github.png" alt="GitHub" />
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('portfolio') }}" tabindex="0">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('blog') }}" tabindex="2" aria-disabled="false">Blog</a>
                 </li>
             </ul>
         </div>
-    </footer>
+    </nav>
+</div>
+<br/><br/><br/>
+<div class="title text-center" style="padding-left: 50px;">
+    <img src="/static/images/me_circle.png" alt="Me" style="width: 25rem;">
+    <b><h2>Hello, My name is Mitchell Henschel</h2></b>
+</div>
+<br/>
+<script src="static/js/bootstrap.min.js"></script>
+<div class="main">
+    <div class="container" id="intro">
+        <p align="center">I'm 23 and I've lived most of my life in Washtenaw County, MI. In December 2019 I received my
+            Bachelor's
+            in Data Science from Eastern Michigan University.</p>
+        <p>
+        <h3>Academic Interests:</h3>
+        <ol>
+            <ul>
+                <li>Object Oriented Programming</li>
+            </ul>
+            <ul>
+                <li>Relational and Non-relational Database Design</li>
+            </ul>
+            <ul>
+                <li>Machine Learning</li>
+            </ul>
+            <ul>
+                <li>Statistics and Predictive Analysis</li>
+            </ul>
+            <ul>
+                <li>Cyber Security and System Administration</li>
+            </ul>
+            <ul>
+                <li>Linux and Open Source Software</li>
+            </ul>
+        </ol>
+        </p>
+        <p>
+        <h3>Personal Interests:</h3>
+        <ol>
+            <ul>
+                <li>Programming</li>
+            </ul>
+            <ul>
+                <li>Video Games</li>
+                <ul>
+                    <li>Dark Souls</li>
+                    <li>Enter the Gungeon</li>
+                    <li>Runescape</li>
+                </ul>
+            </ul>
+            <ul>
+                <li>Listening to Music and Going to Concerts</li>
+            </ul>
+            <ul>
+                <li>Playing Guitar</li>
+            </ul>
+            <ul>
+                <li>Reading</li>
+            </ul>
+        </ol>
+        </p>
+    </div>
+    <br/>
+    <hr>
+    <br/>
+    <script src="static/js/util.js"></script>
+    <p align="center">
+        <button id="btn" class="btn-dark btn-outline-light" onclick="hideElement('resume')">Show Resume</button>
+    </p>
+    <div class="container" align="center" id="resume" style="display:none;">
+        <P class="p4 ft3">Skills</P>
+        <TABLE cellpadding=0 cellspacing=0 class="t0">
+            <TR>
+                <TD class="tr0 td0"><P class="p5 ft4">&nbsp;</P></TD>
+                <TD class="tr0 td1"><P class="p5 ft5">Data Manipulation</P></TD>
+                <TD colspan=2 class="tr0 td2"><P class="p5 ft5">Front & Back End Development</P></TD>
+                <TD colspan=2 class="tr0 td3"><P class="p6 ft5">Business Skills</P></TD>
+                <TD colspan=2 class="tr0 td4"><P class="p6 ft5">Software</P></TD>
+            </TR>
+            <TR>
+                <TD class="tr1 td0"><P class="p5 ft4">&nbsp;</P></TD>
+                <TD class="tr1 td1"><P class="p5 ft4">&nbsp;</P></TD>
+                <TD colspan=2 class="tr1 td2"><P class="p5 ft5"></P></TD>
+                <TD class="tr1 td5"><P class="p5 ft4">&nbsp;</P></TD>
+                <TD class="tr1 td6"><P class="p5 ft4">&nbsp;</P></TD>
+                <TD class="tr1 td5"><P class="p5 ft4">&nbsp;</P></TD>
+                <TD class="tr1 td7"><P class="p5 ft4">&nbsp;</P></TD>
+            </TR>
+            <TR>
+                <TD class="tr2 td0"><P class="p5 ft6">●</P></TD>
+                <TD class="tr2 td1"><P class="p7 ft6">Data Mining</P></TD>
+                <TD class="tr2 td8"><P class="p8 ft6">●</P></TD>
+                <TD class="tr2 td9"><P class="p5 ft6">Python</P></TD>
+                <TD class="tr2 td5"><P class="p5 ft6">●</P></TD>
+                <TD class="tr2 td6"><P class="p5 ft6">Communication</P></TD>
+                <TD class="tr2 td5"><P class="p5 ft6">●</P></TD>
+                <TD class="tr2 td7"><P class="p5 ft6">MS Office</P></TD>
+            </TR>
+            <TR>
+                <TD class="tr3 td0"><P class="p5 ft6">●</P></TD>
+                <TD class="tr3 td1"><P class="p7 ft6">SQL & NoSQL</P></TD>
+                <TD class="tr3 td8"><P class="p8 ft6">●</P></TD>
+                <TD class="tr3 td9"><P class="p5 ft6">Java</P></TD>
+                <TD class="tr3 td5"><P class="p5 ft6">●</P></TD>
+                <TD class="tr3 td6"><P class="p5 ft6">Teamwork</P></TD>
+                <TD class="tr3 td5"><P class="p5 ft6">●</P></TD>
+                <TD class="tr3 td7"><P class="p5 ft6">MS Access</P></TD>
+            </TR>
+            <TR>
+                <TD class="tr3 td0"><P class="p5 ft6">●</P></TD>
+                <TD class="tr3 td1"><P class="p7 ft6">Hadoop</P></TD>
+                <TD class="tr3 td8"><P class="p8 ft6">●</P></TD>
+                <TD class="tr3 td9"><P class="p5 ft6">Bash</P></TD>
+                <TD class="tr3 td5"><P class="p5 ft6">●</P></TD>
+                <TD class="tr3 td6"><P class="p5 ft6">Data</P></TD>
+                <TD class="tr3 td5"><P class="p5 ft6">●</P></TD>
+                <TD class="tr3 td7"><P class="p5 ft6">MS SQL Server</P></TD>
+            </TR>
+            <TR>
+                <TD colspan=2 class="tr3 td10"><P class="p5 ft6">●&nbsp&nbsp&nbsp R and Python</P></TD>
+                <TD class="tr3 td8"><P class="p8 ft6">●</P></TD>
+                <TD class="tr3 td9"><P class="p5 ft6">Javascript</P></TD>
+                <TD class="tr3 td5"><P class="p5 ft4">&nbsp;</P></TD>
+                <TD class="tr3 td6"><P class="p5 ft6">Visualization</P></TD>
+                <TD class="tr3 td5"><P class="p5 ft6">●</P></TD>
+                <TD class="tr3 td7"><P class="p5 ft6">Windows, OSX &</P></TD>
+            </TR>
+            <TR>
+                <TD class="tr3 td0"><P class="p5 ft4">&nbsp;</P></TD>
+                <TD class="tr3 td1"><P class="p7 ft6">Data Modeling</P></TD>
+                <TD class="tr3 td8"><P class="p8 ft6">●</P></TD>
+                <TD class="tr3 td9"><P class="p5 ft6">HTML/CSS</P></TD>
+                <TD class="tr3 td5"><P class="p5 ft6">●</P></TD>
+                <TD class="tr3 td6"><P class="p5 ft6">Public Speaking</P></TD>
+                <TD class="tr3 td5"><P class="p5 ft4">&nbsp;</P></TD>
+                <TD class="tr3 td7"><P class="p5 ft6">Linux</P></TD>
+            </TR>
+            <TR>
+                <TD class="tr1 td0"><P class="p5 ft6">●</P></TD>
+                <TD class="tr1 td1"><P class="p7 ft6">Bayesian Analysis</P></TD>
+                <TD class="tr1 td8"><P class="p8 ft6">●</P></TD>
+                <TD class="tr1 td9"><P class="p5 ft6">MS Sharepoint</P></TD>
+                <TD class="tr1 td5"><P class="p5 ft6">●</P></TD>
+                <TD class="tr1 td6"><P class="p5 ft6">Organization</P></TD>
+                <TD class="tr1 td5"><P class="p5 ft6">●</P></TD>
+                <TD class="tr1 td7"><P class="p5 ft6">Amazon AWS</P></TD>
+            </TR>
+        </TABLE>
+        <BR/>
+        <P class="p9 ft3">Experience</P>
+        <BR/>
+        <TABLE cellpadding=0 cellspacing=0 class="t1">
+            <TR>
+                <TD class="tr4 td11"><P class="p5 ft8">IT Netsuite Intern - <SPAN
+                        class="ft7">​National Food Group</SPAN></P></TD>
+                <TD class="tr4 td12"><P class="p5 ft7">Oct 2019 - Present</P></TD>
+            </TR>
+        </TABLE>
+        <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Assisted in administering Netsuite user accounts and permissions</SPAN>
+        </P>
+        <P class="p11 ft11"><SPAN class="ft7">●</SPAN><SPAN class="ft10">Tested and developed workflows and JS scripts based on saved search conditions to handle automation of reporting and creation and population of custom fields</SPAN>
+        </P>
+        <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Assisted employees in creation of KPI’s, saved searches, and dashboard design</SPAN>
+        </P>
+        <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Practiced data modeling for productivity improvement and marketing applications</SPAN>
+        </P>
+        <P class="p12 ft13"><SPAN class="ft7">●</SPAN><SPAN class="ft12">Worked with other departments on new NetSuite implementations and changes to existing systems</SPAN>
+        </P>
+        <BR/>
+
+        <TABLE cellpadding=0 cellspacing=0 class="t2">
+            <TR>
+                <TD class="tr1 td11"><P class="p5 ft7"><SPAN class="ft8">Operations Intern - </SPAN>​Blue Cross Blue
+                    Shield</P></TD>
+                <TD class="tr1 td13"><P class="p5 ft14"><SPAN class="ft7">​</SPAN>May 2019 - Aug 2019</P></TD>
+            </TR>
+        </TABLE>
+        <P class="p13 ft16"><SPAN class="ft7">●</SPAN><SPAN class="ft15">Worked with Analyst team in the Individual Membership and Billing Department to create reports through MS Access</SPAN>
+        </P>
+        <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Assigned system permissions to current and new employees</SPAN>
+        </P>
+        <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Created and administered a SharePoint employee feedback page</SPAN>
+        </P>
+        <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Created a UI in MS Access to organize inventory reporting queries</SPAN>
+        </P>
+        <P class="p14 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Created a mail categorizing application in Excel using VBA and VLOOKUP</SPAN>
+        </P>
+        <BR/>
+
+        <TABLE cellpadding=0 cellspacing=0 class="t2">
+            <TR>
+                <TD class="tr5 td11"><P class="p5 ft7"><SPAN class="ft8">Busser/Host </SPAN>​- Northside Grill</P></TD>
+                <TD class="tr5 td13"><P class="p5 ft14"><SPAN class="ft7">​</SPAN>Aug 2017 - May 2019</P></TD>
+            </TR>
+        </TABLE>
+        <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN
+                class="ft9">Set up and cleaned table and seated customers</SPAN></P>
+        <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Communicated with staff to handle all customer needs</SPAN>
+        </P>
+        <P class="p15 ft13"><SPAN class="ft7">●</SPAN><SPAN
+                class="ft9">Balanced the register at the end of the day</SPAN></P>
+        <BR/>
+        <TABLE>
+            <TD class="tr1 td11"><P class="p5 ft7"><SPAN class="ft8">&nbsp&nbspSales intern </SPAN>​- Kaiser Optical
+                Systems, Inc.</P></TD>
+            <TD class="tr1 td13"><P class="p5 ft14"><SPAN class="ft7"></SPAN>&nbsp&nbsp Jun 2016 - Sep 2016</P></TD>
+        </TABLE>
+
+        <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Ran quantitative analyses and diagnosed problems on RAMAN spectrographs</SPAN>
+        </P>
+        <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Updated online database of inventory using SalesForce, Agile, and Filemaker Pro</SPAN>
+        </P>
+        <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Installed software and diagnosed issues with systems heading to demo</SPAN>
+        </P>
+        <BR/>
+        <P class="p16 ft3">Education</P>
+        <P class="p17 ft14">Bachelor of Science (December 2019)</P>
+        <P class="p18 ft7">Eastern Michigan University, Ypsilanti</P>
+        <P class="p19 ft7">Major: Data Science and Analysis with Concentration on Theory</P>
+        <P class="p20 ft7">3.72 GPA</P>
+    </div>
+    <br/>
+    <hr>
+    <br/>
+    <div id="faq" class="container">
+        <h4>What is Data Science?</h4>
+        <p>To put it simply, data science is the study of data and the methods of recording, storing, and
+            analyzing data to extract useful information. A data scientist has more programming knowledge than
+            that of a statistician and more statistical knowledge than that of a programmer, while also using
+            business skills to apply findings to the industry.</p>
+        <h4>What kind of analytical tools are you familiar with?</h4>
+        <p>I'm familiar with data mining and modeling tools in Python, R and SAS, with my personal favorite being Python
+            due to it's ease of use and powerful libraries for machine learning and natural language processing.</p>
+        <h4>What other projects are you working on right now?</h4>
+        <p>This website has taken up a lot of my time, and I have many more ideas I'd love to implement. Of these a
+            blog page using MongoDB and calender page to keep track of my shows would be the first to come! However, I
+            may put these on the back-burner while I work on my next machine learning project; More on that to come!</p>
+        <h4>What kind of music do you like?</h4>
+        <p>I listen to a little bit of everything, but my favorite genre is rock. Some of my favorite bands are
+            King Gizzard and the Lizard Wizard, Post Animal, and Tame Impala. Click on the 'Blog' tag in the header for some
+            song recommendations!</p>
+        <h4>What books are you reading right now?</h4>
+        <p>I'm reading through a machine learning textbook in an attempt to self teach myself. I'm also trying
+            finish the complete works of H.P. Lovecraft, and the recently published auto-biography of Edward Snowden.</p>
+    </div>
+    <br />
+    <p align="center">Thanks for reading!<br />
+    <small align="center">Last updated 1/14/2020</small></p>
+    <br/><br/><br/><br/>
+</div>
+</body>
+<footer class="footer font-small text-center"
+        style="position: fixed; width: 100%; background-color: black; text-align: center; padding-top: 10px; padding-bottom: 20px; bottom: 0;">
+    <div class="container">
+        <ul class="list-unstyled list-inline text-center" style="display: inline;">
+            <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/mitchell-henschel-2980a911b/">
+                    <img src="static/images/LI-Logo.png" alt="LinkedIn"/>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://github.com/Elkip">
+                    <img src="static/images/Github.png" alt="GitHub"/>
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>
 </html>

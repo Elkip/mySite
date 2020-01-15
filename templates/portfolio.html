@@ -25,10 +25,10 @@
                     <a class="nav-link" href="{{ url_for('about') }}" tabindex="1" aria-disabled="false">About Me</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" tabindex="0">Portfolio</a>
+                    <a class="nav-link" href="{{ url_for('portfolio') }}" tabindex="0">Portfolio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" tabindex="2" aria-disabled="false">Blog</a>
+                    <a class="nav-link" href="{{ url_for('blog') }}" tabindex="2" aria-disabled="false">Blog</a>
                 </li>
             </ul>
         </div>
@@ -80,7 +80,7 @@
             <img class="card-img-top " src="static/images/dos.png " alt="Sample" style="width:5rem;height:5rem;">
             <div class="card-body col text-center">
                 <h5 class="card-title">DOS-Like Operating System</h5>
-                <p class="card-text text-center">A basic OS build with Assembly</p>
+                <p class="card-text text-center">A low-level OS using assembly</p>
                 <button id="btn_4" class="btn btn-info btn-primary"
                         onclick="getElementById('modal_4').style.display = 'block';">Details
                 </button>
@@ -118,8 +118,8 @@
             <p>Description: My Undergraduate project I worked on for 2 semesters. Contained in an Amazon EC2
                 instance, it has a django app connected to a MySQL database. Allows for search, input and deletion
                 of music in the catalog. The first half of the project I exported the data from MS Access and
-                designed the realtional database. In the second half of the project, I led a team of 4 students in
-                building the web application.</p>
+                designed the relational database with ER diagrams. In the second half of the project, I led a team of 4 students in
+                building the web application using the Django frameworks.</p>
             <p align="center"><a href="https://github.com/Elkip/WEMU_App">View Repository</a></p>
         </div>
     </div>
@@ -135,12 +135,12 @@
         <div class="modal-body">
             <p>Languages: C, Makefile</p>
             <p>Description: A project I created for a Networking class I took. Select a stock and quantity and send the
-            order through RSA encrypted UDP and TCP connections. See the readme on how to start the server and key manager.</p>
+            order through UDP and TCP connections with an RSA encryption scheme. See the readme on how to start the server and key manager.</p>
             <p align="center"><a href="https://github.com/Elkip/Networking_Prinipals">View Repository</a></p>
         </div>
     </div>
 </div>
-<!-- Modal 3 -->
+<!-- Modal 4 -->
 <div id="modal_4" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
@@ -150,8 +150,8 @@
         </div>
         <div class="modal-body">
             <p>Languages: NASM Assembly</p>
-            <p>Description: Created for a class on the conceptual workings of operating systems. Tells time, takes input,
-            and runs a virus to make the graphics glitch out upon entering a specific key pattern.</p>
+            <p>Description: Created for a class on the conceptual workings of operating systems. Implemented a low-level
+                operating system using x86 instructions and BIOS calls.</p>
             <p align="center"><a href="https://github.com/Elkip/OS_assembly">View Repository</a></p>
         </div>
     </div>

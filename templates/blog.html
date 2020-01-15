@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}">
+    <link href="{{ url_for('static', filename='icons/Cloud-icon.ico') }}" rel="cloud icon">
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.min.js"></script>
+
+</head>
+
+<body class="bg-dark text-white">
+<!--Header-->
+<div class="header">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+        <a class="navbar-brand" href="{{ url_for('home') }}">Homepage</a>
+        <div class="collapse navbar-collapse navbar-fixed-top" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('about') }}" tabindex="1" aria-disabled="false">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('portfolio') }}" tabindex="0">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('blog') }}" tabindex="2" aria-disabled="false">Blog</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<br/><br/><br/>
+<h2 align="center">This Blog is a Work in Progress</h2>
+
+  <div id="albumRecommendations" class="tabcontent text-center">
+    <h3>For now here are some of my favorite songs:</h3>
+    <p> Place Holder Content! Tab Works!</p>
+    <ul>
+      <li>Post Animal: Special Moment (2018)</li> <br />
+        <iframe src="https://open.spotify.com/embed/track/3Z8804glpo31YP2aPn7w28" width="300" height="380" frameborder="0"
+                allowtransparency="true" allow="encrypted-media"></iframe>
+    </ul>
+    <ul>
+      <li> Tame Impala: Feels Like We Only Go Backwards (2012)</li> <br />
+        <iframe src="https://open.spotify.com/embed/track/0LtOwyZoSNZKJWHqjzADpW" width="300" height="380" frameborder="0"
+                allowtransparency="true" allow="encrypted-media"></iframe>
+    </ul>
+      <ul>
+      <li>King Gizzard and the Lizard Wizard: I'm in Your Mind (2014)</li> <br />
+        <iframe src="https://open.spotify.com/embed/track/7Jt8XwrIn68jXTwX22VDvX" width="300" height="380" frameborder="0"
+                allowtransparency="true" allow="encrypted-media"></iframe>
+    </ul>
+  </div>
+
+</body>
+
+</html>
