@@ -10,6 +10,8 @@
     <link href="{{ url_for('static', filename='css/resume.css') }}" rel="stylesheet">
 </head>
 <body class="bg-dark text-white">
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
 <div class="header">
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
         <a class="navbar-brand" href="{{ url_for('home') }}">Homepage</a>
@@ -29,12 +31,11 @@
     </nav>
 </div>
 <br/><br/><br/>
-<div class="title text-center" style="padding-left: 50px;">
-    <img src="/static/images/me_circle.png" alt="Me" style="width: 25rem;">
+<div class="title text-center">
+    <img src="/static/images/me_circle.png" alt="Me" style="width: 20rem;">
     <b><h2>Hello, My name is Mitchell Henschel</h2></b>
 </div>
 <br/>
-<script src="static/js/bootstrap.min.js"></script>
 <div class="main">
     <div class="container" id="intro">
         <p align="center">I'm 23 and I've lived most of my life in Washtenaw County, MI. In December 2019 I received my
@@ -277,6 +278,7 @@
     <small align="center">Last updated 1/14/2020</small></p>
     <br/><br/><br/><br/>
 </div>
+
 </body>
 <footer class="footer font-small text-center"
         style="position: fixed; width: 100%; background-color: black; text-align: center; padding-top: 10px; padding-bottom: 20px; bottom: 0;">
