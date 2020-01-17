@@ -1,3 +1,5 @@
+//import { TWEEN } from './tweenjs.min';
+
 var drawEveryFrame = 1;
 var frame = 0;
 var lineWidthStart = 3.5;
