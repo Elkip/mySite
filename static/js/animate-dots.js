@@ -1,5 +1,3 @@
-//import { TWEEN } from './tweenjs.min';
-
 var drawEveryFrame = 1;
 var frame = 0;
 var lineWidthStart = 3.5;
@@ -275,22 +273,26 @@ function generateElectroCircle(count) {
     var pathLength = Math.floor(path.getTotalLength());
 
     var percent = {value : 0};
+    try {
+        new TWEEN.Tween(percent).to({value: 50}, 3000).onUpdate(function () {
+            moveObj(path, percent.value, pathLength);
+        }).onComplete(function () {
+            blueCircle.x = -10;
+            blueCircle.y = -10;
+            yellowCircle.x = -10;
+            yellowCircle.y = -10;
 
-    new TWEEN.Tween(percent).to({value : 50}, 3000).onUpdate(function() {
-        moveObj(path, percent.value, pathLength);
-    }).onComplete(function() {
-        blueCircle.x = -10;
-        blueCircle.y = -10;
-        yellowCircle.x = -10;
-        yellowCircle.y = -10;
-
-        setTimeout(function() {
-            if(count + 1 === document.querySelectorAll('path[color]').length)
-                generateElectroCircle(0);
-            else
-                generateElectroCircle(count + 1);
-        }, 2000)
-    }).start();
+            setTimeout(function () {
+                if (count + 1 === document.querySelectorAll('path[color]').length)
+                    generateElectroCircle(0);
+                else
+                    generateElectroCircle(count + 1);
+            }, 2000)
+        }).start();
+    }
+    catch (error) {
+        return true;
+    }
 }
 
 generateElectroCircle(animationCount);
@@ -313,29 +315,33 @@ function moveObj(path, prcnt, pathLength) {
 
 function drawPattern() {
     requestAnimationFrame(drawPattern);
+    try {
+        TWEEN.update();
+            ctx.beginPath();
+            ctx.fillStyle = grd;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.closePath();
 
-    TWEEN.update();
+            var pattern = ctx.createPattern(back_pattern, 'repeat');
+            ctx.fillStyle = pattern;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.beginPath();
-    ctx.fillStyle = grd;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.closePath();
+            var grd_active = ctx.createLinearGradient(0, 0, canvas.width, 0);
+            grd_active.addColorStop(0, "#0092ff");
+            grd_active.addColorStop(0.5, "#00ffae");
+            grd_active.addColorStop(1, '#e5fe48');
 
-    var pattern = ctx.createPattern(back_pattern, 'repeat');
-    ctx.fillStyle = pattern;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.fillStyle = grd_active;
+            ctx.arc(blueCircle.x, blueCircle.y, 3, 0, 2 * Math.PI);
+            ctx.fill();
 
-    var grd_active = ctx.createLinearGradient(0, 0, canvas.width, 0);
-    grd_active.addColorStop(0, "#0092ff");
-    grd_active.addColorStop(0.5, "#00ffae");
-    grd_active.addColorStop(1, '#e5fe48');
+            ctx.arc(yellowCircle.x, yellowCircle.y, 3, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.closePath();
+    }
+    catch (error) {
+        return true;
+    }
 
-    ctx.beginPath();
-    ctx.fillStyle = grd_active;
-    ctx.arc(blueCircle.x, blueCircle.y, 3, 0, 2 * Math.PI);
-    ctx.fill();
-
-    ctx.arc(yellowCircle.x, yellowCircle.y, 3, 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.closePath();
 }

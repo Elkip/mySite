@@ -13,18 +13,21 @@
 <script src="static/js/jquery.min.js"></script>
 <script src="static/js/bootstrap.min.js"></script>
 <div class="header">
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" role="navigation" style="background-color: rgba(47,47,47,0.87);">
         <a class="navbar-brand" href="{{ url_for('home') }}">Homepage</a>
-        <div class="collapse navbar-collapse navbar-fixed-top" id="navbarSupportedContent">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('about') }}" tabindex="1" aria-disabled="false">About Me</a>
+                    <a class="nav-link" href="{{ url_for('about') }}">About Me</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('portfolio') }}" tabindex="0">Portfolio</a>
+                    <a class="nav-link" href="{{ url_for('portfolio') }}">Portfolio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('blog') }}" tabindex="2" aria-disabled="false">Blog</a>
+                    <a class="nav-link" href="{{ url_for('blog') }}">Blog</a>
                 </li>
             </ul>
         </div>
@@ -188,13 +191,13 @@
         </TABLE>
         <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Assisted in administering Netsuite user accounts and permissions</SPAN>
         </P>
-        <P class="p11 ft11"><SPAN class="ft7">●</SPAN><SPAN class="ft10">Tested and developed workflows and JS scripts based on saved search conditions to handle automation of reporting and creation and population of custom fields</SPAN>
+        <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Tested and developed workflows and JS scripts based on saved search conditions to handle automation of reporting and creation and population of custom fields</SPAN>
         </P>
         <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Assisted employees in creation of KPI’s, saved searches, and dashboard design</SPAN>
         </P>
         <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Practiced data modeling for productivity improvement and marketing applications</SPAN>
         </P>
-        <P class="p12 ft13"><SPAN class="ft7">●</SPAN><SPAN class="ft12">Worked with other departments on new NetSuite implementations and changes to existing systems</SPAN>
+        <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Worked with other departments on new NetSuite implementations and changes to existing systems</SPAN>
         </P>
         <BR/>
 
@@ -205,7 +208,7 @@
                 <TD class="tr1 td13"><P class="p5 ft14"><SPAN class="ft7">​</SPAN>May 2019 - Aug 2019</P></TD>
             </TR>
         </TABLE>
-        <P class="p13 ft16"><SPAN class="ft7">●</SPAN><SPAN class="ft15">Worked with Analyst team in the Individual Membership and Billing Department to create reports through MS Access</SPAN>
+        <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Worked with Analyst team in the Individual Membership and Billing Department to create reports through MS Access</SPAN>
         </P>
         <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Assigned system permissions to current and new employees</SPAN>
         </P>
@@ -213,7 +216,7 @@
         </P>
         <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Created a UI in MS Access to organize inventory reporting queries</SPAN>
         </P>
-        <P class="p14 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Created a mail categorizing application in Excel using VBA and VLOOKUP</SPAN>
+        <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Created a mail categorizing application in Excel using VBA and VLOOKUP</SPAN>
         </P>
         <BR/>
 
@@ -227,8 +230,7 @@
                 class="ft9">Set up and cleaned table and seated customers</SPAN></P>
         <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Communicated with staff to handle all customer needs</SPAN>
         </P>
-        <P class="p15 ft13"><SPAN class="ft7">●</SPAN><SPAN
-                class="ft9">Balanced the register at the end of the day</SPAN></P>
+        <P class="p10 ft7"><SPAN class="ft7">●</SPAN><SPAN class="ft9">Balanced the register at the end of the day</SPAN></P>
         <BR/>
         <TABLE>
             <TD class="tr1 td11"><P class="p5 ft7"><SPAN class="ft8">&nbsp&nbspSales intern </SPAN>​- Kaiser Optical
@@ -247,7 +249,7 @@
         <P class="p17 ft14">Bachelor of Science (December 2019)</P>
         <P class="p18 ft7">Eastern Michigan University, Ypsilanti</P>
         <P class="p19 ft7">Major: Data Science and Analysis with Concentration on Theory</P>
-        <P class="p20 ft7">3.72 GPA</P>
+        <P class="p20 ft7">3.72 GPA<br /> Magna Cum Laude</P>
     </div>
     <br/>
     <hr>
