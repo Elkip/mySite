@@ -23,5 +23,11 @@ def blog():
     return render_template('blog.html')
 
 
+@app.route('/test')
+def test():
+    msg = 'Congratulations. You have discovered the secret page.'
+    return render_template('test.html', title="Test", message=msg)
+
+
 if __name__ == '__main__':
     app.run(debug=False)
