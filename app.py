@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, flash, url_for
 from flask_mail import Mail, Message
-from flask_sqlalchemy import SQLAlchemy
-import pymysql
+# from flask_sqlalchemy import SQLAlchemy
+# import pymysql
 from forms import ContactForm
 import re
 import os
@@ -10,8 +10,7 @@ import os
 # RECAPTCHA_PRIVATE_KEY = '6LeYIbsSAAAAAJezaIq3Ft_hSTo0YtyeFG-JgRtu'
 
 app = Flask(__name__)
-## remember not to upload these to github!!
-app.config['SECRET_KEY'] = '*******************'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 # app.config['SQLALCHEMY_DATABASE_URL'] = 'mysql+pymysql://flask_mail:@localhost/flask_app_db'
 # app.config['SQLALCHEMY_ECHO'] = True
 #
@@ -22,8 +21,8 @@ mail_settings = {
     "MAIL_PORT": 465,
     "MAIL_USE_TLS": False,
     "MAIL_USE_SSL": True,
-    "MAIL_USERNAME": '*********************',
-    "MAIL_PASSWORD": '**********************'
+    "MAIL_USERNAME": os.getenv('EMAIL_USERNAME'),
+    "MAIL_PASSWORD": os.getenv('EMAIL_PASSWORD')
 }
 
 app.config.update(mail_settings)
@@ -63,11 +62,11 @@ def contact():
             with app.app_context():
                 msg = Message(subject="New message from: " + form.name.data,
                               sender=app.config.get("MAIL_USERNAME"),
-                              recipients=["************@gmail.com"],
+                              recipients=[os.getenv('MY_EMAIL')],
                               body="Message From: " + form.name.data + " \nReply Email: " + form.email.data +
                                    "\nMessage: " + form.message.data)
                 mail.send(msg)
-            return render_template('test.html', title="Message Sent", message=form.message.data)
+            return render_template('test.html', title="Message Sent", message="Message Sent!")
         # return redirect(url_for('test'))
     return render_template('contact.html', form=form)
 
