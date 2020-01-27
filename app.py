@@ -44,12 +44,12 @@ def contact():
             flash("Character limit Exceeded")
         else:
             with app.app_context():
-                msg = Message(subject="New message from: " + form.name.data,
-                              sender=app.config.get("MAIL_USERNAME"),
-                              recipients=[os.getenv('MY_EMAIL')],
-                              body="Message From: " + form.name.data + " \nReply Email: " + form.email.data +
-                                   "\nMessage: " + form.message.data)
-                mail.send(msg)
+                # msg = Message(subject="New message from: " + form.name.data,
+                #               sender=app.config.get("MAIL_USERNAME"),
+                #               recipients=[os.getenv('MY_EMAIL')],
+                #               body="Message From: " + form.name.data + " \nReply Email: " + form.email.data +
+                #                    "\nMessage: " + form.message.data)
+                # mail.send(msg)
                 headers_list = request.headers.getlist("X-Forwarded-For")
                 user_ip = headers_list[0] if headers_list else request.remote_addr
             return render_template('test.html', title="Message Sent", message=user_ip)
