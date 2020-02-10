@@ -16,7 +16,7 @@ class Config(object):
     DEBUG = False
     TESTING = False
     CSRF_ENABLED = True
-    SECRET_KEY = "balls"   # os.getenv('SECRET_KEY')
+    SECRET_KEY = os.getenv('SECRET_KEY')
     # SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://flask:H0bbitPremire@localhost/flask_app_db'
     # SQLALCHEMY_ECHO = True
     # SQLALCHEMY_TRACK_MODIFICATIONS = False

@@ -6,6 +6,9 @@ from .forms import ContactForm
 import re
 import os
 
+from mySite import mail
+
+
 bp = Blueprint("contact", __name__)
 
 
