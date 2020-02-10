@@ -14,6 +14,7 @@ bp = Blueprint("contact", __name__)
 
 @bp.route('/contact', methods=['GET', 'POST'])
 def contact():
+    print(os.getenv("SECRET_KEY"))
     form = ContactForm()
     if request.method == "POST":
         if not re.search(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", form.email.data):
@@ -32,7 +33,7 @@ def contact():
             user_ip = headers_list[0] if headers_list else request.remote_addr
             coded_ip = inet_aton(user_ip)
             # user = Contact(name=form.name.data, email=form.name.data, message=form.message.data, ip=coded_ip)
-            return render_template('contact/test.html', title="Message Sent", message="Hello")
+            return render_template('contact/test.html', title="Message Sent", message="Success! Thanks for coming.")
     return render_template('contact/contact.html', form=form)
 
 
