@@ -1,15 +1,20 @@
-from flask import Flask, render_template, request, redirect, flash, url_for
-# from flask_mail import Mail
-from config import Config
+from flask import Flask
+from flask_mail import Mail
+from config import Config, mail_settings
 # from flask_sqlalchemy import SQLAlchemy
+
+
+mail = Mail()
+# db = SQLAlchemy()
 
 
 def create_app(test_config=None):
     app = Flask(__name__)
     app.config.from_object(Config)
-    # db = SQLAlchemy(app)
-    # app.config.update(mail_settings)
-    # mail = Mail(app)
+    app.config.update(mail_settings)
+
+    mail.init_app(app)
+    # db.init_app(app)
 
     from mySite import contact
     from mySite import blog
