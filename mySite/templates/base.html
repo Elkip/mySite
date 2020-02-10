@@ -16,23 +16,23 @@
 <div class="header">
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top" role="navigation"
          style="background-color: rgba(47,47,47,0.87);">
-        <a class="navbar-brand" href="{{ url_for('home') }}">Homepage</a>
+        <a class="navbar-brand" href="{{ url_for('site.home') }}">Homepage</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('about') }}">About Me</a>
+                    <a class="nav-link" href="{{ url_for('site.about') }}">About Me</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('portfolio') }}">Portfolio</a>
+                    <a class="nav-link" href="{{ url_for('site.portfolio') }}">Portfolio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('blog') }}">Blog</a>
+                    <a class="nav-link" href="{{ url_for('blog.blog') }}">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+                    <a class="nav-link" href="{{ url_for('contact.contact') }}">Contact</a>
                 </li>
             </ul>
         </div>

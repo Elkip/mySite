@@ -1,5 +1,4 @@
 import os
-import pymysql
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -18,9 +17,9 @@ class Config(object):
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = "balls"   # os.getenv('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://flask_mail:H0bbitPremire@localhost/flask_app_db'
-    SQLALCHEMY_ECHO = True
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    # SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://flask:H0bbitPremire@localhost/flask_app_db'
+    # SQLALCHEMY_ECHO = True
+    # SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class ProductionConfig(Config):
