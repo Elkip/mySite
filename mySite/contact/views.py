@@ -23,7 +23,7 @@ def contact():
             flash("Character limit Exceeded")
         else:
             msg = Message(subject="New message from: " + form.name.data,
-                          sender=os.getenv("MAIL_USERNAME"),
+                          sender=os.getenv("EMAIL_USERNAME"),
                           recipients=[os.getenv('MY_EMAIL')],
                           body="Message From: " + form.name.data + " \nReply Email: " + form.email.data +
                                "\nMessage: " + form.message.data)
