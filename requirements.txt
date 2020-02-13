@@ -1,5 +1,4 @@
 wtforms
 sqlalchemy
 flask
-https://uicookies.com/css-background-pattern/
-https://colorlib.com/
+mysqlclient

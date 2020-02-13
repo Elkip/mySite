@@ -1,6 +1,7 @@
-from app import db
+from mySite import db
 from sqlalchemy.dialects.mysql import INTEGER
 from datetime import datetime
+from socket import inet_ntoa
 
 
 class Contact(db.Model):
@@ -12,5 +13,5 @@ class Contact(db.Model):
     ip = db.Column(INTEGER(unsigned=True))
 
     def __repr__(self):
-        return (self.id + '\n' + self.name + '\n' + self.email + '\n' + self.message + '\n' +
-                self.subtime + '\n' + self.ip)
+        return self.name + '\n' + self.email + '\n' + self.message + '\n' + \
+               inet_ntoa(self.ip.to_bytes(4, byteorder='little', signed=False))

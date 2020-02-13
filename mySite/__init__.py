@@ -1,11 +1,11 @@
 from flask import Flask
 from flask_mail import Mail
 from config import Config, mail_settings
-# from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
 
 mail = Mail()
-# db = SQLAlchemy()
+db = SQLAlchemy()
 
 
 def create_app(test_config=None):
@@ -14,7 +14,7 @@ def create_app(test_config=None):
     app.config.update(mail_settings)
 
     mail.init_app(app)
-    # db.init_app(app)
+    db.init_app(app)
 
     from mySite import contact
     from mySite import blog
