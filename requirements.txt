@@ -1,4 +1,7 @@
 wtforms
 sqlalchemy
-flask
 mysqlclient
+
+flask
+flask_mail
+flask_sqlalchemy
