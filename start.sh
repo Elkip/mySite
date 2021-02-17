@@ -1,6 +1,6 @@
 #!/bin/bash
-app="flask-app"
+app="my-site"
 docker build -t ${app} .
-docker run -d -p 8080:80 \
+docker run -d -p 8080:8080 \
 	--name=${app} \
 	-v $PWD:/app ${app}

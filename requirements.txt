@@ -5,3 +5,4 @@ mysqlclient
 flask
 flask_mail
 flask_sqlalchemy
+flask_wtf
