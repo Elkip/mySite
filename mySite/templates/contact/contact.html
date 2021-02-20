@@ -18,13 +18,5 @@
         {% endwith %}
     </div>
     <div class="form text-center">
-        <form method="POST" action="">
-            {{ form.csrf_token }}
-            {{ form.name.label }}<br/> {{ form.name(size=20) }}<br/>
-            {{ form.email.label }}<br/> {{ form.email(size=20) }}<br/>
-            {{ form.message.label }}<br/> {{ form.message(cols="20", rows="10") }} <br/>
-            {# {{ form.captcha }} #}
-            <input type="submit" value="Go">
-        </form>
     </div>
 {% endblock %}
