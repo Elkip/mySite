@@ -16,11 +16,11 @@ def create_app(test_config=None):
     #mail.init_app(app)
     #db.init_app(app)
 
-    from mySite import contact
+    #from mySite import contact
     from mySite import blog
     from mySite import site
 
-    app.register_blueprint(contact.bp)
+    #app.register_blueprint(contact.bp)
     app.register_blueprint(blog.bp)
     app.register_blueprint(site.bp)
 
