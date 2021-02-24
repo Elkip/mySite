@@ -13,10 +13,10 @@ mail_settings = {
 
 
 class Config(object):
-    DEBUG = False
+    DEBUG = True
     TESTING = False
-    CSRF_ENABLED = True
-    SECRET_KEY = os.getenv('SECRET_KEY')
+    CSRF_ENABLED = False
+    #SECRET_KEY = os.getenv('SECRET_KEY')
     SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI')
     SQLALCHEMY_ECHO = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False

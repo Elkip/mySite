@@ -1,7 +1,6 @@
 wtforms
 sqlalchemy
-mysqlclient
-
+uwsgi
 flask
 flask_mail
 flask_sqlalchemy

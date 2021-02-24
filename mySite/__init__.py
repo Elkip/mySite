@@ -4,17 +4,17 @@ from config import Config, mail_settings
 from flask_sqlalchemy import SQLAlchemy
 
 
-mail = Mail()
-db = SQLAlchemy()
+#mail = Mail()
+#db = SQLAlchemy()
 
 
 def create_app(test_config=None):
     app = Flask(__name__)
     app.config.from_object(Config)
-    app.config.update(mail_settings)
+    #app.config.update(mail_settings)
 
-    mail.init_app(app)
-    db.init_app(app)
+    #mail.init_app(app)
+    #db.init_app(app)
 
     from mySite import contact
     from mySite import blog
