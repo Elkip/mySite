@@ -1,7 +1,6 @@
 wtforms
-sqlalchemy
 uwsgi
 flask
 flask_mail
-flask_sqlalchemy
 flask_wtf
+Flask-CouchDB

@@ -16,10 +16,9 @@ class Config(object):
     DEBUG = True
     TESTING = False
     CSRF_ENABLED = False
-    #SECRET_KEY = os.getenv('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI')
-    SQLALCHEMY_ECHO = True
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = os.getenv('SECRET_KEY')
+    COUCHDB_SERVER = os.getenv('COUCHDB_SERVER')
+    COUCHDB_DATABASE = os.getenv('COUCHDB_DATABASE')
 
 
 class ProductionConfig(Config):

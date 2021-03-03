@@ -1,7 +1,11 @@
 # Intellij Products
 /.idea/
 *.iml
+
+# Custom Files
 *.bkp
+env*
+*.json
 
 # Byte-compiled / optimized / DLL files
 /__pycache__/*
