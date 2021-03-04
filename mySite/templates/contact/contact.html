@@ -1,30 +1,22 @@
 {% extends "base.html" %}
 {% block title %} Contact Me {% endblock %}
 {% block content %}
-<div class="text-center">
-    <h2><b>Send me a message or just say hi:</b></h2><br/><br/>
-</div>
-<div class="container" style="min-height:100%; width:80%">
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    {% for message in messages %}
-    <div class="alert alert-warning alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                aria-hidden="true">×</span></button>
-        {{ message }}
+    <div class="text-center">
+        <h2><b>Please say why you visited or leave feedback on the form below:</b></h2><br/><br/>
     </div>
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
-</div>
-<div class="form text-center">
-    <form method="POST" action="">
-        {{ form.csrf_token }}
-        {{ form.name.label }}<br/> {{ form.name(size=20) }}<br/>
-        {{ form.email.label }}<br/> {{ form.email(size=20) }}<br/>
-        {{ form.message.label }}<br/> {{ form.message(cols="20", rows="10") }} <br/>
-        {# {{ form.captcha }} #}
-        <input type="submit" value="Go">
-    </form>
-</div>
+    <div class="container" style="min-height:100%; width:80%">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">×</span></button>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div class="form text-center">
+    </div>
 {% endblock %}

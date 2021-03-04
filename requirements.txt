@@ -1,6 +1,6 @@
-wtforms~=2.3.3
+wtforms
 uwsgi
-flask~=1.1.2
+flask
 flask_mail
 flask_wtf
-CouchDB~=1.2
+Flask-CouchDB

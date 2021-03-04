@@ -1,211 +1,211 @@
 {% extends 'base.html' %}
 {% block title %} Portfolio {% endblock %}
 {% block header %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}">
 {% endblock %}
 <!--Cards-->
 {% block content %}
-<div class="card-deck bg-secondary">
-    <!--Row1-->
-    <div class="row mx-auto" style="margin-top:5px;margin-bottom: 5px;">
-        <!--MySite-->
-        <div class="card align-items-center bg-dark" style="width: 30rem">
-            <img class="card-img-top" src="static/images/cloud.png" alt="Sample" style="width:7rem;height:5rem;">
-            <div class="card-body col text-center">
-                <h5 class="card-title">This Website</h5>
-                <p class="card-text text-center">A personal project to hold my portfolio</p>
-                <button id="btn_1" class="btn btn-info btn-primary"
-                        onclick="getElementById('modal_1').style.display = 'block';">Details
-                </button>
+    <div class="card-deck bg-secondary">
+        <!--Row1-->
+        <div class="row mx-auto" style="margin-top:5px;margin-bottom: 5px;">
+            <!--MySite-->
+            <div class="card align-items-center bg-dark" style="width: 30rem">
+                <img class="card-img-top" src="static/images/cloud.png" alt="Sample" style="width:7rem;height:5rem;">
+                <div class="card-body col text-center">
+                    <h5 class="card-title">This Website</h5>
+                    <p class="card-text text-center">A personal project to hold my portfolio</p>
+                    <button id="btn_1" class="btn btn-info btn-primary"
+                            onclick="getElementById('modal_1').style.display = 'block';">Details
+                    </button>
+                </div>
+            </div>
+            <!--WEMU-->
+            <div class="card align-items-center bg-dark" style="width: 30rem">
+                <img class="card-img-top" src="static/images/WEMU-Logo.png" alt="Sample"
+                     style="width:5rem;height:5rem;">
+                <div class="card-body col text-center">
+                    <h5 class="card-title">WEMU Music Catalog</h5>
+                    <p class="card-text text-center">Django CRUD web app with MySQL</p>
+                    <button id="btn_2" class="btn btn-info btn-primary"
+                            onclick="getElementById('modal_2').style.display = 'block';">Details
+                    </button>
+                </div>
             </div>
         </div>
-        <!--WEMU-->
-        <div class="card align-items-center bg-dark" style="width: 30rem">
-            <img class="card-img-top" src="static/images/WEMU-Logo.png" alt="Sample"
-                 style="width:5rem;height:5rem;">
-            <div class="card-body col text-center">
-                <h5 class="card-title">WEMU Music Catalog</h5>
-                <p class="card-text text-center">Django CRUD web app with MySQL</p>
-                <button id="btn_2" class="btn btn-info btn-primary"
-                        onclick="getElementById('modal_2').style.display = 'block';">Details
-                </button>
+        <!--Row2-->
+        <div class="row mx-auto" style="margin-top:5px;margin-bottom: 5px;">
+            <!--Client Server-->
+            <div class="card align-items-center bg-dark" style="width: 30rem">
+                <img class="card-img-top" src="static/images/network.png" alt="Sample" style="width:7rem;height:5rem;">
+                <div class="card-body col text-center">
+                    <h5 class="card-title">Stock Trading Client-Server Program</h5>
+                    <p class="card-text text-center">Socket programming in C</p>
+                    <button id="btn_3" class="btn btn-info btn-primary"
+                            onclick="getElementById('modal_3').style.display = 'block';">Details
+                    </button>
+                </div>
+            </div>
+            <!--Project3-->
+            <div class="card align-items-center bg-dark" style="width: 30rem">
+                <img class="card-img-top " src="static/images/dos.png " alt="Sample" style="width:5rem;height:5rem;">
+                <div class="card-body col text-center">
+                    <h5 class="card-title">DOS-Like Operating System</h5>
+                    <p class="card-text text-center">A low-level OS using assembly</p>
+                    <button id="btn_4" class="btn btn-info btn-primary"
+                            onclick="getElementById('modal_4').style.display = 'block';">Details
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--Row3-->
+        <div class="row mx-auto" style="margin-top:5px;margin-bottom: 5px;">
+            <!--Bash Script-->
+            <div class="card align-items-center bg-dark" style="width: 30rem">
+                <img class="card-img-top" src="static/images/Terminal-512.png" alt="Sample"
+                     style="width:5rem;height:5rem;">
+                <div class="card-body col text-center">
+                    <h5 class="card-title">Bash Document Sorting</h5>
+                    <p class="card-text text-center">A script I use for my desktop</p>
+                    <button id="btn_5" class="btn btn-info btn-primary"
+                            onclick="getElementById('modal_5').style.display = 'block';">Details
+                    </button>
+                </div>
+            </div>
+            <!--Project6-->
+            <div class="card align-items-center bg-dark" style="width: 30rem">
+                <img class="card-img-top " src="static/images/twitter_icon.png " alt="Sample"
+                     style="width:5rem;height:5rem;">
+                <div class="card-body col text-center">
+                    <h5 class="card-title">Twitter Sentiment Analysis</h5>
+                    <p class="card-text text-center">Input a topic to find the sentiment of it on Twitter</p>
+                    <button id="btn_6" class="btn btn-info btn-primary"
+                            onclick="getElementById('modal_6').style.display = 'block';">Details
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-    <!--Row2-->
-    <div class="row mx-auto" style="margin-top:5px;margin-bottom: 5px;">
-        <!--Client Server-->
-        <div class="card align-items-center bg-dark" style="width: 30rem">
-            <img class="card-img-top" src="static/images/network.png" alt="Sample" style="width:7rem;height:5rem;">
-            <div class="card-body col text-center">
-                <h5 class="card-title">Stock Trading Client-Server Program</h5>
-                <p class="card-text text-center">Socket programming in C</p>
-                <button id="btn_3" class="btn btn-info btn-primary"
-                        onclick="getElementById('modal_3').style.display = 'block';">Details
-                </button>
+    <!-- Modal 1 -->
+    <div id="modal_1" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">This Site!</h4>
+                <span class="close" onclick="getElementById('modal_1').style.display='none';">&times;</span>
             </div>
-        </div>
-        <!--Project3-->
-        <div class="card align-items-center bg-dark" style="width: 30rem">
-            <img class="card-img-top " src="static/images/dos.png " alt="Sample" style="width:5rem;height:5rem;">
-            <div class="card-body col text-center">
-                <h5 class="card-title">DOS-Like Operating System</h5>
-                <p class="card-text text-center">A low-level OS using assembly</p>
-                <button id="btn_4" class="btn btn-info btn-primary"
-                        onclick="getElementById('modal_4').style.display = 'block';">Details
-                </button>
+            <div class="modal-body">
+                <p>Languages: Python Flask, HTML, CSS, Javascript</p>
+                <p>Description: A side project to use as my personal portfolio! It took a few weekends to build, and
+                    is hosted from PythonAnywhere.com. <br/>In the works: A blog page that will use CouchDB to hold
+                    posts..</p>
+                <p align="center"><a href="https://github.com/Elkip/mySite">View Repository</a></p>
             </div>
         </div>
     </div>
-    <!--Row3-->
-    <div class="row mx-auto" style="margin-top:5px;margin-bottom: 5px;">
-        <!--Bash Script-->
-        <div class="card align-items-center bg-dark" style="width: 30rem">
-            <img class="card-img-top" src="static/images/Terminal-512.png" alt="Sample"
-                 style="width:5rem;height:5rem;">
-            <div class="card-body col text-center">
-                <h5 class="card-title">Bash Document Sorting</h5>
-                <p class="card-text text-center">A script I use for my desktop</p>
-                <button id="btn_5" class="btn btn-info btn-primary"
-                        onclick="getElementById('modal_5').style.display = 'block';">Details
-                </button>
+    <!-- Modal 2 -->
+    <div id="modal_2" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">WEMU Music Catalog</h4>
+                <span class="close" onclick="getElementById('modal_2').style.display='none';">&times;</span>
             </div>
-        </div>
-        <!--Project6-->
-        <div class="card align-items-center bg-dark" style="width: 30rem">
-            <img class="card-img-top " src="static/images/twitter_icon.png " alt="Sample"
-                 style="width:5rem;height:5rem;">
-            <div class="card-body col text-center">
-                <h5 class="card-title">Twitter Sentiment Analysis</h5>
-                <p class="card-text text-center">Input a topic to find the sentiment of it on Twitter</p>
-                <button id="btn_6" class="btn btn-info btn-primary"
-                        onclick="getElementById('modal_6').style.display = 'block';">Details
-                </button>
+            <div class="modal-body">
+                <p>Languages: Python Django, HTML, CSS, JavaScript, SQL, Bash</p>
+                <p>Description: My Undergraduate project I worked on for 2 semesters. Contained in an Amazon EC2
+                    instance, it has a django app connected to a MySQL database. Allows for search, input and deletion
+                    of music in the catalog. The first half of the project I exported the data from MS Access and
+                    designed the relational database with ER diagrams. In the second half of the project, I led a team
+                    of 4 students in
+                    building the web application using the Django frameworks.</p>
+                <p align="center"><a href="https://github.com/Elkip/WEMU_App">View Repository</a></p>
             </div>
         </div>
     </div>
-</div>
-<!-- Modal 1 -->
-<div id="modal_1" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="modal-title">This Site!</h4>
-            <span class="close" onclick="getElementById('modal_1').style.display='none';">&times;</span>
-        </div>
-        <div class="modal-body">
-            <p>Languages: Python Flask, HTML, CSS, Javascript</p>
-            <p>Description: A side project to use as my personal portfolio! It took a few weekends to build, and
-                is hosted from PythonAnywhere.com. <br/>In the works: A blog page that will use CouchDB to hold
-                posts..</p>
-            <p align="center"><a href="https://github.com/Elkip/mySite">View Repository</a></p>
-        </div>
-    </div>
-</div>
-<!-- Modal 2 -->
-<div id="modal_2" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="modal-title">WEMU Music Catalog</h4>
-            <span class="close" onclick="getElementById('modal_2').style.display='none';">&times;</span>
-        </div>
-        <div class="modal-body">
-            <p>Languages: Python Django, HTML, CSS, JavaScript, SQL, Bash</p>
-            <p>Description: My Undergraduate project I worked on for 2 semesters. Contained in an Amazon EC2
-                instance, it has a django app connected to a MySQL database. Allows for search, input and deletion
-                of music in the catalog. The first half of the project I exported the data from MS Access and
-                designed the relational database with ER diagrams. In the second half of the project, I led a team
-                of 4 students in
-                building the web application using the Django frameworks.</p>
-            <p align="center"><a href="https://github.com/Elkip/WEMU_App">View Repository</a></p>
+    <!-- Modal 3 -->
+    <div id="modal_3" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Client-Server Stock Trading Program</h4>
+                <span class="close" onclick="getElementById('modal_3').style.display='none';">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Languages: C, Makefile</p>
+                <p>Description: A project I created for a Networking class I took. Select a stock and quantity and send
+                    the
+                    order through UDP and TCP connections with an RSA encryption scheme. See the readme on how to start
+                    the server and key manager.</p>
+                <p align="center"><a href="https://github.com/Elkip/Networking_Prinipals">View Repository</a></p>
+            </div>
         </div>
     </div>
-</div>
-<!-- Modal 3 -->
-<div id="modal_3" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="modal-title">Client-Server Stock Trading Program</h4>
-            <span class="close" onclick="getElementById('modal_3').style.display='none';">&times;</span>
-        </div>
-        <div class="modal-body">
-            <p>Languages: C, Makefile</p>
-            <p>Description: A project I created for a Networking class I took. Select a stock and quantity and send
-                the
-                order through UDP and TCP connections with an RSA encryption scheme. See the readme on how to start
-                the server and key manager.</p>
-            <p align="center"><a href="https://github.com/Elkip/Networking_Prinipals">View Repository</a></p>
-        </div>
-    </div>
-</div>
-<!-- Modal 4 -->
-<div id="modal_4" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="modal-title">DOS-Like Operating System</h4>
-            <span class="close" onclick="getElementById('modal_4').style.display='none';">&times;</span>
-        </div>
-        <div class="modal-body">
-            <p>Languages: NASM Assembly</p>
-            <p>Description: Created for a class on the conceptual workings of operating systems. Implemented a
-                low-level
-                operating system using x86 instructions and BIOS calls.</p>
-            <p align="center"><a href="https://github.com/Elkip/OS_assembly">View Repository</a></p>
+    <!-- Modal 4 -->
+    <div id="modal_4" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">DOS-Like Operating System</h4>
+                <span class="close" onclick="getElementById('modal_4').style.display='none';">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Languages: NASM Assembly</p>
+                <p>Description: Created for a class on the conceptual workings of operating systems. Implemented a
+                    low-level
+                    operating system using x86 instructions and BIOS calls.</p>
+                <p align="center"><a href="https://github.com/Elkip/OS_assembly">View Repository</a></p>
+            </div>
         </div>
     </div>
-</div>
-<!-- Modal 5 -->
-<div id="modal_5" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="modal-title">Document Sorting Bash Script</h4>
-            <span class="close" onclick="getElementById('modal_5').style.display='none';">&times;</span>
-        </div>
-        <div class="modal-body">
-            <p>Languages: Bash</p>
-            <p>Description: If your're like me, you might have a Desktop or Downloads folder full of various files
-                that may or may not be important. This script is designed to sort those files based on their
-                extension.
-                It runs at startup via cron. It could easily be adapted to Windows Powershell.</p>
-            <p align="center"><a href="https://github.com/Elkip/clean_downloads">View Repository</a></p>
-        </div>
-    </div>
-</div>
-<!-- Modal 6 -->
-<div id="modal_6" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="modal-title">Twitter Sentiment Analysis</h4>
-            <span class="close" onclick="getElementById('modal_6').style.display='none';">&times;</span>
-        </div>
-        <div class="modal-body">
-            <p>Languages: Python</p>
-            <p>Description: Uses Text-Blob to find if a word is positive or negative and Twitter-Scraper to get the
-                tweets pertaining to a topic without having to provide log-in credentials or an API key.</p>
-            <p align="center"><a href="https://github.com/Elkip/Tweet_Sentiment">View Repository</a></p>
+    <!-- Modal 5 -->
+    <div id="modal_5" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Document Sorting Bash Script</h4>
+                <span class="close" onclick="getElementById('modal_5').style.display='none';">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Languages: Bash</p>
+                <p>Description: If your're like me, you might have a Desktop or Downloads folder full of various files
+                    that may or may not be important. This script is designed to sort those files based on their
+                    extension.
+                    It runs at startup via cron. It could easily be adapted to Windows Powershell.</p>
+                <p align="center"><a href="https://github.com/Elkip/clean_downloads">View Repository</a></p>
+            </div>
         </div>
     </div>
-</div>
-<script>
-    // Get the modal
-    var modals = [];
-    modals.push(document.getElementById("modal_1"));
-    modals.push(document.getElementById("modal_2"));
-    modals.push(document.getElementById("modal_3"));
-    modals.push(document.getElementById("modal_4"));
-    modals.push(document.getElementById("modal_5"));
-    modals.push(document.getElementById("modal_6"));
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (modals.includes(event.target)) {
-            (event.target).style.display = "none";
+    <!-- Modal 6 -->
+    <div id="modal_6" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Twitter Sentiment Analysis</h4>
+                <span class="close" onclick="getElementById('modal_6').style.display='none';">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Languages: Python</p>
+                <p>Description: Uses Text-Blob to find if a word is positive or negative and Twitter-Scraper to get the
+                    tweets pertaining to a topic without having to provide log-in credentials or an API key.</p>
+                <p align="center"><a href="https://github.com/Elkip/Tweet_Sentiment">View Repository</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modals = [];
+        modals.push(document.getElementById("modal_1"));
+        modals.push(document.getElementById("modal_2"));
+        modals.push(document.getElementById("modal_3"));
+        modals.push(document.getElementById("modal_4"));
+        modals.push(document.getElementById("modal_5"));
+        modals.push(document.getElementById("modal_6"));
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (modals.includes(event.target)) {
+                (event.target).style.display = "none";
+            }
         }
-    }
-</script>
+    </script>
 
 {% endblock %}
