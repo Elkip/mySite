@@ -1,13 +1,15 @@
+import os
+import re
+from socket import inet_aton
+
 from flask import request, redirect, render_template, flash, url_for, Blueprint
 from flask_mail import Message
-from socket import inet_aton
+
+from .dao import MessageStore
 from .forms import ContactForm
 from .models import Contact
-import re
-import os
 
-from mySite import mail
-from mySite import db
+# from mySite import mail
 
 
 bp = Blueprint("contact", __name__)
@@ -32,11 +34,16 @@ def contact():
             headers_list = request.headers.getlist("X-Forwarded-For")
             user_ip = headers_list[0] if headers_list else request.remote_addr
             coded_ip = int.from_bytes(inet_aton(user_ip), byteorder='little', signed=False)
-            user = Contact(name=form.name.data, email=form.email.data, message=form.message.data, ip=coded_ip)
-            print(user)
-            db.session.add(user)
-            db.session.commit()
-            mail.send(msg)
+
+            try:
+                document = Contact(name=form.name.data, email=form.email.data, message=form.message.data, ip=coded_ip)
+                print(document)
+                couch = MessageStore()
+                couch.add_msg(document)
+                # mail.send(msg)
+            except Exception as e:
+                print(e)
+                return render_template('site/home.html')
             return render_template('contact/test.html', title="Message Sent", message="Success! Thanks for coming.")
     return render_template('contact/contact.html', form=form)
 

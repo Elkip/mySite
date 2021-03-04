@@ -1,11 +1,9 @@
 from flask import Flask
 from flask_mail import Mail
-from config import Config, mail_settings
-from flask_sqlalchemy import SQLAlchemy
 
+from config import Config, mail_settings
 
 mail = Mail()
-db = CouchDBManager()
 
 
 def create_app(test_config=None):
@@ -14,13 +12,12 @@ def create_app(test_config=None):
     app.config.update(mail_settings)
 
     mail.init_app(app)
-    db.setup(app)
 
     from mySite import contact
     from mySite import blog
     from mySite import site
 
-    #app.register_blueprint(contact.bp)
+    app.register_blueprint(contact.bp)
     app.register_blueprint(blog.bp)
     app.register_blueprint(site.bp)
 

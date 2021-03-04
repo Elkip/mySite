@@ -9,6 +9,7 @@ RUN apt-get -y update \
     && pip install -r requirements.txt \
     && rm -rf /var/cache/apk/*
 
+EXPOSE 8080
 EXPOSE 8081
 
 CMD [ "uwsgi", "--ini", "/app/uwsgi.ini" ]
