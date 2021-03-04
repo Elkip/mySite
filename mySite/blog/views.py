@@ -1,6 +1,5 @@
 from flask import render_template, Blueprint
 
-
 bp = Blueprint("blog", __name__)
 
 

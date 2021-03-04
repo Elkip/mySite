@@ -61,38 +61,38 @@ const Dots = class Dots {
         that.grd_active = grd_active;
         that.grd = grd;
 
-        for(let i = 0; i < Math.round(that.canvas.width / circlesMargin * 1.5); i++) {
-            for(let j = 0; j < Math.round(that.canvas.height / circlesMargin * 1.5); j++) {
+        for (let i = 0; i < Math.round(that.canvas.width / circlesMargin * 1.5); i++) {
+            for (let j = 0; j < Math.round(that.canvas.height / circlesMargin * 1.5); j++) {
                 that.circles.push({
-                    x         : 13 + (circlesMargin) * i * 0.8,
-                    y         : 10 + (circlesMargin - 0.25) * j * 0.8,
-                    r         : 0.5,
-                    animation : false
+                    x: 13 + (circlesMargin) * i * 0.8,
+                    y: 10 + (circlesMargin - 0.25) * j * 0.8,
+                    r: 0.5,
+                    animation: false
                 })
             }
         }
 
         that.draw();
-        that.canvas.addEventListener('mousemove', function(e) {
-            if(frame === drawEveryFrame) {
+        that.canvas.addEventListener('mousemove', function (e) {
+            if (frame === drawEveryFrame) {
                 that.addPoint(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
                 frame = 0;
             }
             frame++;
         })
 
-        that.canvas.addEventListener('touchmove', function(e) {
-            if(frame === drawEveryFrame) {
+        that.canvas.addEventListener('touchmove', function (e) {
+            if (frame === drawEveryFrame) {
                 that.addPoint(
-                   e.changedTouches[0].pageX - this.offsetLeft,
-                   e.changedTouches[0].pageY - this.offsetTop
-                 );
+                    e.changedTouches[0].pageX - this.offsetLeft,
+                    e.changedTouches[0].pageY - this.offsetTop
+                );
                 frame = 0;
             }
             frame++;
         })
 
-        window.addEventListener('resize', function(e) {
+        window.addEventListener('resize', function (e) {
             that.redrawForResize();
         })
     }
@@ -106,13 +106,13 @@ const Dots = class Dots {
         that.circles = [];
         that.points = [];
 
-        for(let i = 0; i < Math.round(that.canvas.width / circlesMargin * 1.5); i++) {
-            for(let j = 0; j < Math.round(that.canvas.height / circlesMargin * 1.5); j++) {
+        for (let i = 0; i < Math.round(that.canvas.width / circlesMargin * 1.5); i++) {
+            for (let j = 0; j < Math.round(that.canvas.height / circlesMargin * 1.5); j++) {
                 that.circles.push({
-                    x         : 13 + (circlesMargin) * i * 0.8,
-                    y         : 10 + (circlesMargin - 0.25) * j * 0.8,
-                    r         : 0.5,
-                    animation : false
+                    x: 13 + (circlesMargin) * i * 0.8,
+                    y: 10 + (circlesMargin - 0.25) * j * 0.8,
+                    r: 0.5,
+                    animation: false
                 })
             }
         }
@@ -121,16 +121,16 @@ const Dots = class Dots {
     draw() {
         const that = this;
 
-        requestAnimationFrame(function() {
+        requestAnimationFrame(function () {
             that.draw();
         });
         that.ctx.clearRect(0, 0, that.canvas.width, that.canvas.height);
 
-        that.circles.forEach(function(circle, i) {
+        that.circles.forEach(function (circle, i) {
             that.ctx.beginPath();
             that.ctx.arc(circle.x, circle.y + 1.5, circle.r, 0, 2 * Math.PI, true);
 
-            if(circle.animation) {
+            if (circle.animation) {
                 that.ctx.fillStyle = that.grd_active;
             } else {
                 that.ctx.fillStyle = that.grd;
@@ -147,10 +147,10 @@ const Dots = class Dots {
         var point, lastPoint;
         const that = this;
 
-        for(let i = 0; i < that.points.length; i++) {
+        for (let i = 0; i < that.points.length; i++) {
             point = that.points[i];
 
-            if(that.points[i - 1] !== undefined) {
+            if (that.points[i - 1] !== undefined) {
                 lastPoint = that.points[i - 1];
             } else {
                 lastPoint = that.points[i];
@@ -158,7 +158,7 @@ const Dots = class Dots {
 
             point.lifetime += 1;
 
-            if(point.lifetime > duration) {
+            if (point.lifetime > duration) {
                 that.points.splice(i, 1);
                 continue;
             }
@@ -178,9 +178,9 @@ const Dots = class Dots {
             var midpoint = Point.midPoint(lastPoint, point);
             var angle = Point.angle(lastPoint, point);
 
-            that.circles.forEach(function(circle) {
+            that.circles.forEach(function (circle) {
 
-                if(circle.spreadRate && spreadRate == circle.spreadRate) {
+                if (circle.spreadRate && spreadRate == circle.spreadRate) {
                     circle.r = 0.8;
                     circle.animation = false;
                 }
@@ -197,9 +197,9 @@ const Dots = class Dots {
     drawCircles(x, y, circle, spreadRate) {
         const dist = Math.round(Math.sqrt(Math.pow(x - circle.x, 2) + Math.pow(y - circle.y, 2)));
 
-        if(dist < 8) {
+        if (dist < 8) {
 
-            if(Math.floor(spreadRate))
+            if (Math.floor(spreadRate))
                 circle.animation = true;
             else
                 circle.animation = false;
@@ -224,13 +224,13 @@ canvas.height = window.innerHeight;
 const ctx = canvas.getContext('2d');
 
 const blueCircle = {
-    x : -10,
-    y : -10,
-    r : 0
+    x: -10,
+    y: -10,
+    r: 0
 }, yellowCircle = {
-    x : -10,
-    y : -10,
-    r : 0
+    x: -10,
+    y: -10,
+    r: 0
 };
 var animationCount = 0;
 
@@ -239,14 +239,14 @@ grd.addColorStop(0, "#204868");
 grd.addColorStop(0.5, "#256456");
 grd.addColorStop(1, '#5a643d');
 
-window.addEventListener('resize', function(e) {
+window.addEventListener('resize', function (e) {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 })
 
 var back_pattern = new Image();
 back_pattern.src = 'https://image.ibb.co/iUDfBK/pattern.png';
-back_pattern.onload = function() {
+back_pattern.onload = function () {
     drawPattern();
 };
 
@@ -272,7 +272,7 @@ function generateElectroCircle(count) {
     var path = currentPath;
     var pathLength = Math.floor(path.getTotalLength());
 
-    var percent = {value : 0};
+    var percent = {value: 0};
     try {
         new TWEEN.Tween(percent).to({value: 50}, 3000).onUpdate(function () {
             moveObj(path, percent.value, pathLength);
@@ -289,8 +289,7 @@ function generateElectroCircle(count) {
                     generateElectroCircle(count + 1);
             }, 2000)
         }).start();
-    }
-    catch (error) {
+    } catch (error) {
         return true;
     }
 }
@@ -304,7 +303,7 @@ function moveObj(path, prcnt, pathLength) {
     pt.x = Math.round(pt.x);
     pt.y = Math.round(pt.y);
 
-    if(path.getAttribute('color') == 'blue') {
+    if (path.getAttribute('color') == 'blue') {
         blueCircle.x = pt.x;
         blueCircle.y = pt.y;
     } else {
@@ -317,30 +316,29 @@ function drawPattern() {
     requestAnimationFrame(drawPattern);
     try {
         TWEEN.update();
-            ctx.beginPath();
-            ctx.fillStyle = grd;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.closePath();
+        ctx.beginPath();
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.closePath();
 
-            var pattern = ctx.createPattern(back_pattern, 'repeat');
-            ctx.fillStyle = pattern;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        var pattern = ctx.createPattern(back_pattern, 'repeat');
+        ctx.fillStyle = pattern;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            var grd_active = ctx.createLinearGradient(0, 0, canvas.width, 0);
-            grd_active.addColorStop(0, "#0092ff");
-            grd_active.addColorStop(0.5, "#00ffae");
-            grd_active.addColorStop(1, '#e5fe48');
+        var grd_active = ctx.createLinearGradient(0, 0, canvas.width, 0);
+        grd_active.addColorStop(0, "#0092ff");
+        grd_active.addColorStop(0.5, "#00ffae");
+        grd_active.addColorStop(1, '#e5fe48');
 
-            ctx.beginPath();
-            ctx.fillStyle = grd_active;
-            ctx.arc(blueCircle.x, blueCircle.y, 3, 0, 2 * Math.PI);
-            ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = grd_active;
+        ctx.arc(blueCircle.x, blueCircle.y, 3, 0, 2 * Math.PI);
+        ctx.fill();
 
-            ctx.arc(yellowCircle.x, yellowCircle.y, 3, 0, 2 * Math.PI);
-            ctx.fill();
-            ctx.closePath();
-    }
-    catch (error) {
+        ctx.arc(yellowCircle.x, yellowCircle.y, 3, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+    } catch (error) {
         return true;
     }
 
