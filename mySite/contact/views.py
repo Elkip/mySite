@@ -2,7 +2,7 @@ import os
 import re
 from socket import inet_aton
 
-from flask import request, redirect, render_template, flash, url_for, Blueprint
+from flask import request, redirect, render_template, flash, url_for, Blueprint, current_app
 from flask_mail import Message
 
 from .dao import MessageStore
@@ -17,6 +17,10 @@ bp = Blueprint("contact", __name__)
 
 @bp.route('/contact', methods=['GET', 'POST'])
 def contact():
+    db_server = current_app.config["COUCHDB_SERVER"]
+    db_name = current_app.config["COUCHDB_DATABASE"]
+    print(db_server, db_name)
+
     form = ContactForm()
     if request.method == "POST":
         if not re.search(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", form.email.data):
@@ -38,7 +42,7 @@ def contact():
             try:
                 document = Contact(name=form.name.data, email=form.email.data, message=form.message.data, ip=coded_ip)
                 print(document)
-                couch = MessageStore()
+                couch = MessageStore(db_server, db_name)
                 couch.add_msg(document)
                 # mail.send(msg)
             except Exception as e:
