@@ -3,9 +3,9 @@ from socket import inet_ntoa
 
 
 class Contact:
-    # id = db.Column(INTEGER(unsigned=True), autoincrement=True, primary_key=True)
+
     def __init__(self, name, email, message, ip):
-        self._id = datetime.now().strftime("%d%m%Y-%H%M%S-%f")
+        self._id = datetime.now().strftime("%Y%m%d-%H%M%S-%f")
         self.name = name
         self.email = email
         self.message = message

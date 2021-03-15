@@ -4,12 +4,13 @@ from socket import inet_aton
 
 from flask import request, redirect, render_template, flash, url_for, Blueprint, current_app
 from flask_mail import Message
+import logging
 
 from .dao import MessageStore
 from .forms import ContactForm
 from .models import Contact
 
-# from mySite import mail
+from mySite import mail
 
 
 bp = Blueprint("contact", __name__)
@@ -19,7 +20,6 @@ bp = Blueprint("contact", __name__)
 def contact():
     db_server = current_app.config["COUCHDB_SERVER"]
     db_name = current_app.config["COUCHDB_DATABASE"]
-    print(db_server, db_name)
 
     form = ContactForm()
     if request.method == "POST":
@@ -41,18 +41,18 @@ def contact():
 
             try:
                 document = Contact(name=form.name.data, email=form.email.data, message=form.message.data, ip=coded_ip)
-                print(document)
+                logging.info(document)
                 couch = MessageStore(db_server, db_name)
                 couch.add_msg(document)
-                # mail.send(msg)
+                mail.send(msg)
             except Exception as e:
-                print(e)
-                return render_template('site/home.html')
+                logging.error(e)
+                return render_template('contact/test.html', title="Try again later.", message="Something went wrong."
+                                                                                              " Failure logged.")
             return render_template('contact/test.html', title="Message Sent", message="Success! Thanks for coming.")
     return render_template('contact/contact.html', form=form)
 
 
-@bp.route('/test', methods=['GET', 'POST'])
+@bp.route('/test', methods=['GET'])
 def test():
-    msg = 'Success'
-    return render_template('contact/test.html', title="Message Sent", message=msg)
+    return render_template('contact/test.html', title="Congrats", message="You found the test page.")
