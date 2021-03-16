@@ -12,6 +12,7 @@ mail_settings = {
 }
 
 
+# TODO: Add logging library support to Config
 class Config(object):
     DEBUG = True
     TESTING = False

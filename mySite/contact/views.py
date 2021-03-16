@@ -10,7 +10,7 @@ from .dao import MessageStore
 from .forms import ContactForm
 from .models import Contact
 
-from mySite import mail
+# from mySite import mail
 
 
 bp = Blueprint("contact", __name__)
@@ -44,7 +44,8 @@ def contact():
                 logging.info(document)
                 couch = MessageStore(db_server, db_name)
                 couch.add_msg(document)
-                mail.send(msg)
+                # TODO: Fix Email
+                # mail.send(msg)
             except Exception as e:
                 logging.error(e)
                 return render_template('contact/test.html', title="Try again later.", message="Something went wrong."
