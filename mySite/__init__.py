@@ -1,14 +1,14 @@
 from flask import Flask
 from flask_mail import Mail
 
-from config import Config, mail_settings
+from config import mail_settings, ProductionConfig
 
 mail = Mail()
 
 
-def create_app(test_config=None):
+def create_app():
     app = Flask(__name__)
-    app.config.from_object(Config)
+    app.config.from_object(ProductionConfig)
     app.config.update(mail_settings)
 
     mail.init_app(app)

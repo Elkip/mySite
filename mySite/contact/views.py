@@ -5,6 +5,7 @@ from socket import inet_aton
 from flask import request, redirect, render_template, flash, url_for, Blueprint, current_app
 from flask_mail import Message
 import logging
+from logging.config import dictConfig
 
 from .dao import MessageStore
 from .forms import ContactForm
@@ -12,17 +13,18 @@ from .models import Contact
 
 # from mySite import mail
 
-
 bp = Blueprint("contact", __name__)
 
 
 @bp.route('/contact', methods=['GET', 'POST'])
 def contact():
-    db_server = current_app.config["COUCHDB_SERVER"]
-    db_name = current_app.config["COUCHDB_DATABASE"]
-
     form = ContactForm()
     if request.method == "POST":
+        db_server = current_app.config["COUCHDB_SERVER"]
+        db_name = current_app.config["COUCHDB_DATABASE"]
+        dictConfig(current_app.config["LOGGING_CONFIG"])
+        logger = logging.getLogger()
+
         if not re.search(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", form.email.data):
             flash('You must enter a valid email')
             return redirect(url_for('contact.contact'))
@@ -41,13 +43,13 @@ def contact():
 
             try:
                 document = Contact(name=form.name.data, email=form.email.data, message=form.message.data, ip=coded_ip)
-                logging.info(document)
+                logger.info(document)
                 couch = MessageStore(db_server, db_name)
                 couch.add_msg(document)
                 # TODO: Fix Email
                 # mail.send(msg)
             except Exception as e:
-                logging.error(e)
+                logger.error(e)
                 return render_template('contact/test.html', title="Try again later.", message="Something went wrong."
                                                                                               " Failure logged.")
             return render_template('contact/test.html', title="Message Sent", message="Success! Thanks for coming.")

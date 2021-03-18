@@ -12,8 +12,8 @@ RUN apt-get -y update \
     && pip install -r requirements.txt \
     && rm -rf /var/cache/apk/*
 
-# Expose 8081 for the uwsgi development stats page
-# EXPOSE 8081
+EXPOSE 8080
+EXPOSE 8081
 
 # Change to a non-root user
 USER ${APP_USER}:${APP_USER}
