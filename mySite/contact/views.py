@@ -11,33 +11,33 @@ from .dao import MessageStore
 from .forms import ContactForm
 from .models import Contact
 
-# from mySite import mail
+from mySite import mail
 
-bp = Blueprint("contact", __name__)
+bp = Blueprint('contact', __name__)
 
 
 @bp.route('/contact', methods=['GET', 'POST'])
 def contact():
     form = ContactForm()
-    if request.method == "POST":
-        db_server = current_app.config["COUCHDB_SERVER"]
-        db_name = current_app.config["COUCHDB_DATABASE"]
-        dictConfig(current_app.config["LOGGING_CONFIG"])
+    if request.method == 'POST':
+        db_server = current_app.config['COUCHDB_SERVER']
+        db_name = current_app.config['COUCHDB_DATABASE']
+        dictConfig(current_app.config['LOGGING_CONFIG'])
         logger = logging.getLogger()
 
-        if not re.search(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", form.email.data):
+        if not re.search(r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)', form.email.data):
             flash('You must enter a valid email')
             return redirect(url_for('contact.contact'))
         elif not form.validate():
-            flash("Character limit Exceeded")
+            flash('Character limit Exceeded')
         else:
-            msg = Message(subject="New message from: " + form.name.data,
-                          sender=os.getenv("EMAIL_USERNAME"),
+            msg = Message(subject='New message from: ' + form.name.data,
+                          sender=os.getenv('EMAIL_USERNAME'),
                           recipients=[os.getenv('MY_EMAIL')],
-                          body="Message From: " + form.name.data + " \nReply Email: " + form.email.data +
-                               "\nMessage: " + form.message.data)
+                          body='Message From: ' + form.name.data + ' \nReply Email: ' + form.email.data +
+                               '\nMessage: ' + form.message.data)
 
-            headers_list = request.headers.getlist("X-Forwarded-For")
+            headers_list = request.headers.getlist('X-Forwarded-For')
             user_ip = headers_list[0] if headers_list else request.remote_addr
             coded_ip = int.from_bytes(inet_aton(user_ip), byteorder='little', signed=False)
 
@@ -46,16 +46,15 @@ def contact():
                 logger.info(document)
                 couch = MessageStore(db_server, db_name)
                 couch.add_msg(document)
-                # TODO: Fix Email
-                # mail.send(msg)
+                mail.send(msg)
             except Exception as e:
                 logger.error(e)
-                return render_template('contact/test.html', title="Try again later.", message="Something went wrong."
-                                                                                              " Failure logged.")
-            return render_template('contact/test.html', title="Message Sent", message="Success! Thanks for coming.")
+                return render_template('contact/test.html', title='Try again later.', message='Something went wrong.'
+                                                                                              ' Failure logged.')
+            return render_template('contact/test.html', title='Message Sent', message='Success! Thanks for coming.')
     return render_template('contact/contact.html', form=form)
 
 
 @bp.route('/test', methods=['GET'])
 def test():
-    return render_template('contact/test.html', title="Congrats", message="You found the test page.")
+    return render_template('contact/test.html', title='Congrats', message='You found the test page.')

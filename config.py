@@ -45,7 +45,7 @@ class DevelopmentConfig(Config):
     DEVELOPMENT = True
     DEBUG = True
 
-    DEV_LOGGING_CONFIG = dict(
+    LOGGING_CONFIG = dict(
         version=1,
         formatters={
             'f': {'format': '%(asctime)s %(name)-13s %(levelname)-8s %(message)s'}
